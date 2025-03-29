@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- **** UPDATE TITLE **** -->
+    <title>Register / Contact | AI Quest Academy Singapore</title>
+     <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome (for icons - optional but useful) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Link to your CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-container">
+             <!-- **** UPDATE LOGO TEXT **** -->
+            <a href="index.html" class="logo">AI Quest Academy</a>
+            <nav class="main-nav">
+                 <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                     <i class="fas fa-bars"></i>
+                 </button>
+                 <ul class="nav-links">
+                     <li><a href="index.html">Home</a></li>
+                     <li><a href="program.html">Program Details</a></li>
+                     <li><a href="schedule.html">Schedule & Fees</a></li>
+                     <li><a href="location.html">Location</a></li>
+                     <li><a href="why-us.html">Why Us?</a></li>
+                     <li><a href="faq.html">FAQ</a></li>
+                     <li><a href="contact.html" class="btn btn-primary">Register Now</a></li>
+                 </ul>
+             </nav>
+        </div>
+    </header>
+
+<main>
+    <section class="page-header-section" style="background: linear-gradient(rgba(10, 10, 26, 0.8), rgba(10, 10, 26, 0.9)), url('images/placeholder-contact-header.jpg') no-repeat center center/cover; min-height: 30vh; display: flex; align-items: center;">
+        <div class="container text-center">
+             <!-- **** UPDATE HEADER **** -->
+            <h1>Register for the AI Quest!</h1>
+            <p>Secure your spot for our 4-week introductory course starting May 2025. Early Bird ends April 20th!</p>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-flex">
+                <!-- Form Section -->
+                <div class="contact-form-container">
+                     <!-- **** UPDATE HEADING/TEXT **** -->
+                    <h2>Register Interest / Ask a Question</h2>
+                    <p>Fill out this form to register for the May 2025 intake or ask questions. We'll reply soon!</p>
+                    <!-- **** REMEMBER to set the form action endpoint **** -->
+                    <form id="register-form" action="YOUR_BACKEND_ENDPOINT" method="POST">
+                        <div class="form-group">
+                            <label for="parent-name">Parent's Name <span class="required">*</span></label>
+                            <input type="text" id="parent-name" name="parent_name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="parent-email">Parent's Email <span class="required">*</span></label>
+                            <input type="email" id="parent-email" name="parent_email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="parent-phone">Parent's Phone Number <span class="required">*</span></label>
+                            <input type="tel" id="parent-phone" name="parent_phone" required>
+                        </div>
+                         <div class="form-group">
+                            <label for="child-name">Child's Name <span class="required">*</span></label>
+                            <input type="text" id="child-name" name="child_name" required>
+                        </div>
+                         <div class="form-group">
+                             <!-- **** UPDATE LABEL **** -->
+                            <label for="child-age">Child's Age (10-17) <span class="required">*</span></label>
+                            <input type="number" id="child-age" name="child_age" min="10" max="17" required placeholder="Enter age between 10 and 17">
+                        </div>
+                         <div class="form-group">
+                             <!-- **** UPDATE LABEL & OPTIONS **** -->
+                            <label for="age-group">Select Age Group/Course <span class="required">*</span></label>
+                            <select id="age-group" name="age_group" required>
+                                <option value="" disabled selected>-- Select Age Group --</option>
+                                <option value="10-13">10-13 Years (Innovators - Intro)</option>
+                                <option value="14-17">14-17 Years (Pioneers - Intro)</option>
+                            </select>
+                        </div>
+                        <!-- Optional: Add preferred schedule slot if multiple options exist -->
+                        <!--
+                         <div class="form-group">
+                            <label for="schedule-pref">Preferred Schedule Slot (See Schedule Page)</label>
+                            <select id="schedule-pref" name="schedule_preference">
+                                <option value="" disabled selected>-- Optional: Select Preferred Slot --</option>
+                                <option value="Wed 4:30PM (10-13)">Wed 4:30PM (10-13)</option>
+                                <option value="Thu 5:00PM (14-17)">Thu 5:00PM (14-17)</option>
+                                <option value="Sat 10:00AM (10-13)">Sat 10:00AM (10-13)</option>
+                                <option value="Sat 1:00PM (14-17)">Sat 1:00PM (14-17)</option>
+                            </select>
+                         </div>
+                         -->
+                         <div class="form-group">
+                             <label for="laptop-preference">Laptop Preference</label>
+                             <select id="laptop-preference" name="laptop_preference">
+                                 <option value="Bring Own">Will Bring Own Laptop</option>
+                                 <option value="Share Provided">Prefer to Share Provided Laptop</option>
+                             </select>
+                         </div>
+                        <div class="form-group">
+                            <label for="referral">How Did You Hear About Us? (Optional)</label>
+                            <input type="text" id="referral" name="referral">
+                        </div>
+                         <div class="form-group">
+                            <label for="message">Message / Questions</label>
+                            <textarea id="message" name="message" rows="4"></textarea>
+                        </div>
+                        <div class="form-group privacy-notice">
+                             <small>By submitting this form, you agree to our Privacy Policy. <span class="required">*</span> Required fields.</small>
+                             <!-- Add link to Privacy Policy page later -->
+                         </div>
+                        <div class="form-group">
+                            <!-- **** UPDATE BUTTON TEXT **** -->
+                            <button type="submit" class="btn btn-accent btn-large">Register / Send Message</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Contact Info Section -->
+                <div class="contact-info-container">
+                    <h2>Contact Information</h2>
+                    <p>Prefer to reach out directly?</p>
+                    <ul class="contact-details">
+                        <li>
+                            <i class="fas fa-map-marker-alt icon-secondary"></i>
+                            <div>
+                                <strong>Venue Address:</strong><br>
+                                NTUC FairPrice Hub<br>
+                                1 Joo Koon Circle<br>
+                                Singapore 629117
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope icon-secondary"></i>
+                             <div>
+                                <strong>Email:</strong><br>
+                                 <!-- **** UPDATE EMAIL **** -->
+                                <a href="mailto:info@aiquestacademy.com.sg">info@aiquestacademy.com.sg</a>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone icon-secondary"></i>
+                             <div>
+                                <strong>Phone:</strong><br>
+                                 <!-- **** UPDATE PHONE **** -->
+                                <a href="tel:+65XXXXXXXX">+65 XXXX XXXX</a> <!-- Replace with your phone -->
+                            </div>
+                        </li>
+                         <li>
+                            <i class="fas fa-clock icon-secondary"></i>
+                             <div>
+                                <strong>Inquiry Hours:</strong><br>
+                                Monday - Friday: 10:00 AM - 6:00 PM
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="contact-map-link">
+                         <a href="location.html" class="btn btn-secondary">View Location Map</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-links">
+                 <a href="program.html">Program</a> |
+                 <a href="schedule.html">Schedule</a> |
+                 <a href="location.html">Location</a> |
+                 <a href="faq.html">FAQ</a> |
+                 <a href="contact.html">Contact</a>
+             </div>
+             <div class="footer-social"></div>
+             <!-- **** UPDATE COMPANY NAME **** -->
+             <p>© <span id="current-year"></span> AI Quest Academy Pte Ltd. All Rights Reserved.</p>
+             <p>Venue: NTUC FairPrice Hub, 1 Joo Koon Circle, Singapore 629117</p>
+        </div>
+    </footer>
+
+    <!-- Link to your JavaScript -->
+    <script src="script.js"></script>
+    <!-- Add relevant CSS from previous response -->
+     <style>
+        .contact-flex { display: grid; grid-template-columns: 1fr; gap: 50px; }
+         @media (min-width: 992px) {
+             .contact-flex { grid-template-columns: 2fr 1fr; } /* Form takes more space */
+         }
+
+        .contact-form-container h2, .contact-info-container h2 { margin-bottom: 10px; }
+        .contact-form-container p, .contact-info-container p { margin-bottom: 30px; color: var(--muted-color); }
+
+        /* Form styles already added in previous CSS snippet */
+        .required { color: var(--secondary-accent); }
+        .privacy-notice small { font-size: 0.85rem; color: var(--muted-color); display: block; margin-top: -10px; }
+
+        .contact-info-container { background-color: rgba(26, 26, 58, 0.4); padding: 30px; border-radius: 8px; border: 1px solid rgba(255, 0, 255, 0.2); }
+        .contact-details { list-style: none; padding: 0; margin-top: 20px; }
+        .contact-details li { display: flex; align-items: flex-start; /* Align icon top */ gap: 15px; margin-bottom: 20px; font-size: 1.05rem; }
+        .contact-details i { color: var(--secondary-accent); font-size: 1.3rem; margin-top: 3px; width: 20px; text-align: center;}
+        .contact-details a { color: var(--accent-neon); }
+        .contact-details a:hover { color: var(--secondary-accent); }
+        .contact-details strong { color: var(--text-color); display: block; margin-bottom: 3px; }
+        .contact-map-link { margin-top: 30px; text-align: center; }
+        @media (min-width: 992px) {
+             .contact-map-link { text-align: left; }
+        }
+    </style>
+</body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why Choose AI Quest Academy Singapore?</title>
+     <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome (for icons - optional but useful) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Link to your CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Include styles specific to this page layout directly or ensure they are in style.css -->
+    <style>
+        /* Styles for the image/feature row layout */
+        .feature-block-with-image {
+            display: flex;
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 50px;
+            background-color: rgba(10, 10, 26, 0.4); /* Standard background */
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid rgba(0, 255, 255, 0.2); /* Accent border for standard */
+        }
+        .feature-block-with-image.reverse {
+            flex-direction: row-reverse; /* For alternating layout */
+            background-color: rgba(26, 26, 58, 0.3); /* Different bg for variety */
+             border: 1px solid rgba(255, 0, 255, 0.2); /* Secondary border for reverse */
+        }
+        .feature-image-container {
+            flex: 1 1 400px; /* Allows image container to grow/shrink, base width 400px */
+            max-width: 500px; /* Max width for the image */
+            margin: 0 auto; /* Center image container if it wraps */
+        }
+        .feature-image {
+            border-radius: 8px; /* Rounded corners for the image */
+            display: block; /* Prevent extra space below image */
+            width: 100%; /* Ensure image scales within container */
+            height: auto;
+        }
+        .feature-text-content {
+            flex: 1 1 300px; /* Allows text container to grow/shrink */
+        }
+         .feature-text-content h2 {
+             margin-top: 0;
+             margin-bottom: 15px;
+         }
+         .feature-text-content p {
+             font-size: 1.05rem;
+             color: var(--text-color);
+         }
+
+        /* Fallback for original icon-only blocks if needed elsewhere */
+        .feature-block { display: flex; align-items: center; gap: 30px; margin-bottom: 50px; background: rgba(26, 26, 58, 0.3); padding: 30px; border-radius: 8px; }
+        .feature-block.reverse { flex-direction: row-reverse; background: rgba(10, 10, 26, 0.4); }
+        .feature-icon { font-size: 3.5rem; width: 80px; text-align: center; flex-shrink: 0; }
+        .feature-icon i.icon-accent { color: var(--accent-neon); }
+        .feature-icon i.icon-secondary { color: var(--secondary-accent); }
+        .feature-text h2 { margin-top: 0; margin-bottom: 15px; }
+        /* Heading color definitions moved to inline styles for alternation */
+        .feature-text p { font-size: 1.05rem; color: var(--text-color);}
+
+        @media (max-width: 768px) {
+            /* Stack all feature blocks on mobile */
+             .feature-block-with-image, .feature-block-with-image.reverse {
+                flex-direction: column;
+                text-align: center;
+            }
+            /* Stack original icon blocks if used */
+             .feature-block, .feature-block.reverse {
+                 flex-direction: column;
+                 text-align: center;
+            }
+            .feature-icon { margin-bottom: 15px; }
+        }
+
+        /* Other styles */
+        .instructor-section { margin-top: 60px; }
+        .final-cta { margin-top: 60px; padding-top: 30px; border-top: 1px solid rgba(0, 255, 255, 0.2); }
+         .page-header-section {
+            background-size: cover;
+            background-position: center center;
+            min-height: 30vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+        }
+        .page-header-section h1 {
+            text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">AI Quest Academy</a>
+            <nav class="main-nav">
+                 <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                     <i class="fas fa-bars"></i>
+                 </button>
+                 <ul class="nav-links">
+                     <li><a href="index.html">Home</a></li>
+                     <li><a href="program.html">Program Details</a></li>
+                     <li><a href="schedule.html">Schedule & Fees</a></li>
+                     <li><a href="location.html">Location</a></li>
+                     <li><a href="why-us.html">Why Us?</a></li>
+                     <li><a href="faq.html">FAQ</a></li>
+                     <li><a href="contact.html" class="btn btn-primary">Register Now</a></li>
+                 </ul>
+             </nav>
+        </div>
+    </header>
+
+<main>
+    <section class="page-header-section" style="background: linear-gradient(rgba(10, 10, 26, 0.8), rgba(10, 10, 26, 0.9)), url('images/placeholder-whyus-header.jpg') no-repeat center center/cover;">
+        <div class="container text-center">
+            <h1>Why Choose AI Quest Academy?</h1>
+            <p>Empowering the next generation with creativity, critical thinking, and future-proof skills.</p>
+        </div>
+    </section>
+
+    <section class="why-us-details-section">
+        <div class="container">
+
+            <!-- **** FEATURE BLOCK 1: Hands-On Learning (Image Left) **** -->
+            <div class="feature-block-with-image"> 
+                <div class="feature-image-container">
+                    <img src="images/Kids around laptop.png" alt="Engaged students collaborating on a laptop at AI Quest Academy" class="feature-image">
+                </div>
+                <div class="feature-text-content">
+                    <h2 style="color: var(--accent-neon);">Hands-On, Creative Learning</h2>
+                    <p>Our course prioritizes doing over just listening. Kids actively experiment with AI tools, learn through trial and error, collaborate on projects, and see immediate results. We foster creativity, problem-solving, and critical thinking, ensuring AI is used as a helpful tool.</p>
+                </div>
+            </div>
+            <!-- **** END FEATURE BLOCK 1 **** -->
+
+            <!-- **** FEATURE BLOCK 2: AI + Play (Image Right) **** -->
+            <div class="feature-block-with-image reverse"> 
+                 <div class="feature-image-container">
+                     <img src="images/trampoline park.JPG" alt="Kids enjoying the trampoline park after AI learning session" class="feature-image">
+                 </div>
+                <div class="feature-text-content">
+                    <h2 style="color: var(--secondary-accent);">The AI + Play Advantage</h2>
+                    <p>Learning should be exciting! Combining focused 2-hour AI learning sessions with 1 hour of physical fun at the trampoline park creates a unique and effective environment. It reinforces learning, provides a healthy break, and makes kids eager to return each week.</p>
+                </div>
+            </div>
+            <!-- **** END FEATURE BLOCK 2 **** -->
+
+            <!-- **** FEATURE BLOCK 3: Safety & Ethics (Image Left) **** -->
+            <div class="feature-block-with-image"> 
+                 <div class="feature-image-container">
+                     <img src="images/Robot with signs.png" alt="Robot illustration representing AI safety and ethical guidelines" class="feature-image">
+                 </div>
+                <div class="feature-text-content">
+                    <h2 style="color: var(--accent-neon);">Focus on Safety & Ethical Use</h2>
+                    <p>Teaching powerful tools comes with responsibility. Digital citizenship and ethical AI use are woven into our introductory course. We guide students on online safety, data privacy, identifying AI content, understanding bias, and using AI responsibly.</p>
+                </div>
+            </div>
+             <!-- **** END FEATURE BLOCK 3 **** -->
+
+             <!-- **** FEATURE BLOCK 4: Future Skills (Image Right) **** -->
+             <div class="feature-block-with-image reverse"> 
+                 <div class="feature-image-container">
+                     <img src="images/kids Tron racing positions.png" alt="Kids in futuristic Tron-like poses representing future-ready skills" class="feature-image">
+                 </div>
+                <div class="feature-text-content">
+                    <h2 style="color: var(--secondary-accent);">Introductory Future-Ready Skills</h2>
+                    <p>Artificial Intelligence is transforming the world. Our 4-week intro course gives kids (10-17) a practical head start – understanding AI basics, effective prompting, and using AI as a tool for learning and creativity. It's about building foundational AI literacy.</p>
+                </div>
+            </div>
+              <!-- **** END FEATURE BLOCK 4 **** -->
+
+             <div class="final-cta text-center">
+                 <h2>Join a Community of Young Explorers</h2>
+                 <p>Give your child the advantage of understanding and utilizing AI tools responsibly and creatively with our introductory Quest.</p>
+                 <a href="program.html" class="btn btn-secondary">View Curriculum</a>
+                 <a href="contact.html" class="btn btn-accent">Register Your Interest</a>
+            </div>
+
+        </div>
+    </section>
+</main>
+
+    <footer class="site-footer">
+        <div class="container footer-content">
+             <div class="footer-links">
+                 <a href="program.html">Program</a> |
+                 <a href="schedule.html">Schedule</a> |
+                 <a href="location.html">Location</a> |
+                 <a href="faq.html">FAQ</a> |
+                 <a href="contact.html">Contact</a>
+             </div>
+             <div class="footer-social">
+                 <!-- Add social media links if needed -->
+                 <!-- <a href="#"><i class="fab fa-facebook"></i></a> -->
+             </div>
+             <p>© <span id="current-year"></span> AI Quest Academy Pte Ltd. All Rights Reserved.</p>
+             <p>Venue: NTUC FairPrice Hub, 1 Joo Koon Circle, Singapore 629117</p>
+        </div>
+    </footer>
+
+    <!-- Link to your JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

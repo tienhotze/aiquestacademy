@@ -1,0 +1,637 @@
+/* --- Base Styles & Variables --- */
+:root {
+    --primary-bg: #0a0a1a; /* Deep blue/purple */
+    --secondary-bg: #1a1a3a;
+    --text-color: #e0e0ff; /* Light lavender/white */
+    --heading-color: #ffffff;
+    --accent-neon: #00ffff; /* Neon cyan */
+    --secondary-accent: #ff00ff; /* Neon magenta */
+    --muted-color: #a0a0c0;
+
+    --font-heading: 'Orbitron', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+
+    --container-width: 1100px;
+    --header-height: 70px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--primary-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+    font-size: 16px; /* Base font size */
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--heading-color);
+    margin-bottom: 1rem;
+    line-height: 1.3;
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.3); /* Subtle neon glow */
+}
+
+h1 { font-size: 2.8rem; }
+h2 { font-size: 2.2rem; margin-top: 2rem; }
+h3 { font-size: 1.6rem; }
+
+p {
+    margin-bottom: 1rem;
+    color: var(--muted-color); /* Slightly dimmer text for paragraphs */
+}
+p strong {
+    color: var(--text-color); /* Make strong text brighter */
+}
+
+a {
+    color: var(--accent-neon);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--secondary-accent);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+ul {
+    list-style: none;
+}
+
+section {
+    padding: 60px 0;
+}
+
+/* --- Buttons --- */
+.btn {
+    display: inline-block;
+    padding: 10px 25px;
+    border-radius: 5px;
+    font-family: var(--font-heading);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 5px;
+}
+
+.btn-primary { /* For primary nav CTA */
+    background-color: transparent;
+    border-color: var(--accent-neon);
+    color: var(--accent-neon);
+}
+.btn-primary:hover {
+    background-color: var(--accent-neon);
+    color: var(--primary-bg);
+    box-shadow: 0 0 15px var(--accent-neon);
+}
+
+.btn-accent { /* Main page CTAs */
+    background-color: var(--accent-neon);
+    color: var(--primary-bg);
+    border-color: var(--accent-neon);
+}
+.btn-accent:hover {
+    background-color: transparent;
+    color: var(--accent-neon);
+    box-shadow: 0 0 15px var(--accent-neon);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border-color: var(--secondary-accent);
+    color: var(--secondary-accent);
+}
+.btn-secondary:hover {
+    background-color: var(--secondary-accent);
+    color: var(--primary-bg);
+    box-shadow: 0 0 15px var(--secondary-accent);
+}
+
+.btn-large {
+    padding: 15px 40px;
+    font-size: 1.1rem;
+}
+
+
+/* --- Header Enhancements --- */
+.site-header {
+    /* Darker, slightly metallic gradient background */
+    background: linear-gradient(to bottom, #101528, #0a0d1a);
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    height: var(--header-height); /* Keep height consistent */
+    /* Optional subtle texture overlay */
+    /* background-image: linear-gradient(to bottom, #101528, #0a0d1a), url('images/noise-texture.png'); */
+    /* Subtle bottom border like a panel line */
+    border-bottom: 2px solid var(--accent-neon);
+    /* Glow effect for the border */
+    box-shadow: 0 2px 15px -2px rgba(0, 255, 255, 0.5);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.8rem; /* Keep logo size */
+    font-weight: bold;
+    color: var(--heading-color);
+    text-decoration: none;
+    /* Add a subtle glow to the logo */
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.7), 0 0 15px var(--accent-neon);
+    transition: text-shadow 0.3s ease;
+}
+.logo:hover {
+    color: var(--heading-color); /* Keep color on hover */
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.9), 0 0 25px var(--accent-neon);
+}
+
+
+/* --- Navigation Menu Adjustments --- */
+.main-nav .nav-links {
+    display: flex;
+    align-items: center;
+}
+.main-nav .nav-links li {
+    margin-left: 15px; /* Reduced spacing */
+}
+
+.main-nav .nav-links a {
+    color: var(--text-color);
+    padding: 5px 0;
+    position: relative;
+    text-transform: uppercase;
+    /* **** REDUCED FONT SIZE **** */
+    font-size: 0.75rem; /* Smaller font size to prevent wrapping */
+    letter-spacing: 0.8px; /* Add slight letter spacing */
+    font-weight: bold; /* Make it slightly bolder */
+    white-space: nowrap; /* Prevent wrapping explicitly */
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Enhanced Hover/Active Effect */
+.main-nav .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px; /* Move underline slightly down */
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-neon);
+    transition: width 0.3s ease;
+    /* Add a glow to the underline */
+    box-shadow: 0 0 8px var(--accent-neon);
+}
+.main-nav .nav-links a:hover::after,
+.main-nav .nav-links a.active::after {
+    width: 100%;
+}
+.main-nav .nav-links a:hover {
+    color: var(--accent-neon); /* Brighten text on hover */
+    text-shadow: 0 0 5px var(--accent-neon); /* Add text glow on hover */
+}
+
+/* Adjust "Register Now" Button in Nav */
+.main-nav .nav-links .btn {
+    margin-left: 20px; /* Ensure enough space */
+    padding: 6px 12px; /* Slightly smaller padding */
+    font-size: 0.75rem; /* Match link font size */
+    border-width: 1.5px; /* Slightly thinner border */
+    letter-spacing: 0.8px;
+    white-space: nowrap; /* Prevent wrapping */
+}
+
+.menu-toggle { /* Mobile Menu Button */
+    display: none; /* Hidden by default */
+    background: none;
+    border: none;
+    color: var(--heading-color);
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+/* --- Hero Section - Spaceship Theme --- */
+.hero-section {
+    height: calc(100vh - var(--header-height));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /* **** REPLACE Background with Space Theme **** */
+    background: url('images/space-background.jpg') no-repeat center center/cover; /* <<-- GET A HIGH-RES SPACE IMAGE */
+    position: relative;
+    overflow: hidden;
+    border-bottom: 3px solid var(--accent-neon); /* Thicker border below hero */
+    box-shadow: 0 5px 20px -3px rgba(0, 255, 255, 0.4);
+}
+
+/* HUD Overlay Effect using pseudo-elements */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    /* Thin border lines like a viewscreen */
+    border: 1.5px solid rgba(0, 255, 255, 0.4); /* Accent color, semi-transparent */
+    pointer-events: none; /* Allows clicking through */
+    z-index: 1;
+    opacity: 0.7; /* Make it slightly subtle */
+    border-radius: 3px; /* Slight rounding */
+}
+
+.hero-content {
+    position: relative; /* Ensure content is above pseudo-elements */
+    z-index: 2;
+    /* Add a subtle background to content for readability */
+    background-color: rgba(10, 13, 26, 0.65); /* Semi-transparent dark blue */
+    padding: 30px 40px;
+    border-radius: 5px;
+    /* Optional: Add border similar to HUD */
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    box-shadow: 0 0 25px rgba(10, 13, 26, 0.5);
+}
+
+.hero-content h1 {
+    font-size: 3.2rem; /* Adjust if needed */
+    margin-bottom: 1rem;
+    /* Enhance glow */
+    text-shadow: 0 0 10px var(--accent-neon), 0 0 20px var(--accent-neon), 0 0 5px #fff;
+}
+.hero-content p {
+    font-size: 1.1rem; /* Adjust if needed */
+    max-width: 700px;
+    margin: 0 auto 2rem auto;
+    color: var(--text-color);
+}
+
+/* --- Overview Section --- */
+.overview-section {
+    background-color: var(--secondary-bg);
+    text-align: center;
+}
+.overview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.overview-item {
+    background-color: rgba(10, 10, 26, 0.6); /* Slightly darker boxes */
+    padding: 30px 20px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.overview-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 255, 255, 0.3);
+}
+.overview-item i {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+.icon-accent { color: var(--accent-neon); }
+.icon-secondary { color: var(--secondary-accent); }
+
+.overview-item h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: var(--accent-neon);
+}
+
+/* --- Location Highlight --- */
+.location-highlight-section {
+    background-color: var(--primary-bg);
+}
+.location-flex {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+.location-text {
+    flex: 1;
+}
+.location-image {
+    flex: 1;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid var(--secondary-accent);
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.3);
+}
+.location-image img {
+    border-radius: 6px; /* Inner radius */
+}
+
+
+/* Styles for the new layout in Why Us section */
+.why-us-flex-row {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 40px;
+    background-color: rgba(10, 10, 26, 0.4); /* Optional background */
+    padding: 20px; /* Optional padding */
+    border-radius: 8px; /* Optional rounding */
+}
+
+.why-us-image-container {
+    flex: 1 1 400px; /* Allows image container to grow/shrink, base width 400px */
+    max-width: 500px; /* Max width for the image */
+    margin: 0 auto; /* Center image container if it wraps */
+}
+
+.why-us-feature-image {
+    border-radius: 8px; /* Rounded corners for the image */
+    border: 1px solid var(--secondary-accent); /* Optional border */
+    box-shadow: 0 0 10px rgba(255, 0, 255, 0.3); /* Optional glow */
+}
+
+.why-us-feature-text {
+    flex: 1 1 300px; /* Allows text container to grow/shrink */
+}
+.why-us-feature-text i { /* Style icon if needed */
+     font-size: 2.5rem;
+     margin-bottom: 15px;
+     display: block; /* Make icon block for centering */
+     text-align: center; /* Center icon */
+ }
+@media (min-width: 768px) {
+    .why-us-feature-text i {
+        text-align: left; /* Align left on larger screens */
+    }
+}
+
+
+.why-us-grid-condensed {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px; /* Space between image row and grid */
+}
+/* Keep existing .why-us-item styles */
+
+/* --- Why Us Intro Section --- */
+.why-us-intro-section {
+     background-color: var(--secondary-bg);
+     text-align: center;
+}
+.why-us-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.why-us-item {
+    /* Similar styling to overview-item but maybe use secondary accent */
+    background-color: rgba(10, 10, 26, 0.6);
+    padding: 30px 20px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 0, 255, 0.2);
+     transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.why-us-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(255, 0, 255, 0.3);
+}
+.why-us-item i {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+.why-us-item h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: var(--secondary-accent);
+}
+
+
+/* --- CTA Section --- */
+.cta-section {
+    background: linear-gradient(rgba(26, 26, 58, 0.8), rgba(10, 10, 26, 0.9)), url('images/placeholder-cta-bg.jpg') no-repeat center center/cover; /* Different BG */
+    text-align: center;
+    color: #fff;
+}
+.cta-section h2 {
+    text-shadow: 0 0 10px var(--secondary-accent);
+}
+.cta-section p {
+    color: var(--text-color);
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+}
+
+
+/* --- Footer --- */
+.site-footer {
+    background-color: #050510; /* Even darker footer */
+    color: var(--muted-color);
+    padding: 30px 0;
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 60px; /* Space before footer */
+    border-top: 1px solid rgba(0, 255, 255, 0.1);
+}
+
+.footer-links {
+    margin-bottom: 15px;
+}
+.footer-links a {
+    color: var(--muted-color);
+    margin: 0 10px;
+}
+.footer-links a:hover {
+    color: var(--accent-neon);
+}
+.footer-social {
+    margin-bottom: 15px;
+}
+.footer-social a {
+    color: var(--muted-color);
+    font-size: 1.5rem;
+    margin: 0 8px;
+}
+.footer-social a:hover {
+     color: var(--secondary-accent);
+}
+
+/* --- Contact Form Styling (Used on contact.html) --- */
+.contact-section {
+    padding: 60px 0;
+}
+#register-form {
+    max-width: 700px;
+    margin: 40px auto 0 auto;
+    background-color: var(--secondary-bg);
+    padding: 30px 40px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 255, 255, 0.2);
+}
+.form-group {
+    margin-bottom: 20px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-family: var(--font-heading);
+    color: var(--text-color);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="number"], /* Added number type */
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    background-color: rgba(10, 10, 26, 0.8);
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    border-radius: 4px;
+    color: var(--text-color);
+    font-family: var(--font-body);
+    font-size: 1rem;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-neon);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
+}
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+.form-group button[type="submit"] {
+    /* Use button styles defined earlier */
+    width: 100%;
+    padding: 15px; /* Larger submit button */
+    margin-top: 10px;
+}
+/* Form specific styles used on contact.html */
+.required { color: var(--secondary-accent); }
+.privacy-notice small { font-size: 0.85rem; color: var(--muted-color); display: block; margin-top: -10px; }
+
+/* --- Other Page Specific Styles (Add styles for program, schedule, etc. here or keep in HTML) --- */
+/* Styles for .page-header-section, .age-group, .schedule-table, .fee-box, .location-grid, .feature-block, .faq-item etc. should be placed here */
+/* Example: */
+.page-header-section {
+    background-size: cover;
+    background-position: center center;
+    min-height: 30vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+.page-header-section h1 {
+    text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+
+/* --- Responsive Design --- */
+@media (max-width: 992px) {
+    .container {
+        max-width: 90%;
+    }
+    .location-flex {
+        flex-direction: column;
+    }
+    .location-image {
+        margin-top: 30px;
+    }
+     /* Adjust nav link size for medium screens if needed */
+     /* .main-nav .nav-links a { font-size: 0.7rem; } */
+     /* .main-nav .nav-links .btn { font-size: 0.7rem; } */
+}
+
+@media (max-width: 768px) {
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.8rem; }
+    .hero-content h1 { font-size: 2.5rem; }
+
+    .menu-toggle {
+        display: block; /* Show hamburger */
+        z-index: 1001; /* Above nav links */
+    }
+    .main-nav .nav-links {
+        display: none; /* Hide links by default */
+        flex-direction: column;
+        position: absolute;
+        top: var(--header-height);
+        left: 0;
+        width: 100%;
+        /* Mobile menu background matches header */
+        background-color: #0a0d1a;
+        padding: 20px 0;
+        border-bottom: 1px solid var(--accent-neon);
+    }
+    .main-nav .nav-links.active {
+        display: flex; /* Show when active */
+    }
+    .main-nav .nav-links li {
+        margin: 10px 0;
+        text-align: center;
+        width: 100%;
+    }
+     /* Ensure mobile links are readable */
+     .main-nav .nav-links a {
+         font-size: 0.9rem;
+         white-space: normal; /* Allow wrapping on mobile menu if needed */
+     }
+     .main-nav .nav-links .btn {
+         margin: 15px auto 0 auto; /* Center button */
+         display: block;
+         width: fit-content;
+         font-size: 0.9rem; /* Keep mobile button readable */
+         padding: 8px 15px;
+         white-space: normal;
+     }
+
+    .overview-grid, .why-us-grid {
+        grid-template-columns: 1fr; /* Stack items */
+    }
+
+    .feature-block, .feature-block.reverse {
+        flex-direction: column;
+        text-align: center;
+    }
+    .feature-icon { margin-bottom: 15px; }
+}

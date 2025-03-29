@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule & Fees | AI Quest Academy Singapore</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome (for icons - optional but useful) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Link to your CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Include styles specific to this page directly or ensure they are in style.css -->
+    <style>
+        .structure-details p { font-size: 1.1rem; margin-bottom: 15px; display: flex; align-items: center; }
+        .structure-details i { margin-right: 15px; width: 20px; text-align: center; color: var(--accent-neon); }
+        .schedule-table-container { margin-top: 40px; margin-bottom: 40px; }
+        .schedule-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        .schedule-table th, .schedule-table td {
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            padding: 12px 15px;
+            text-align: left;
+            vertical-align: middle; /* Align content nicely */
+        }
+        .schedule-table thead { background-color: rgba(0, 255, 255, 0.1); }
+        .schedule-table th { font-family: var(--font-heading); color: var(--accent-neon); }
+        .schedule-table tbody tr:nth-child(odd) { background-color: rgba(26, 26, 58, 0.2); }
+        .schedule-table .note { font-size: 0.9rem; margin-top: 10px; color: var(--muted-color); }
+
+        .fees-section { margin-top: 50px; display: flex; justify-content: center; }
+        .fee-box {
+            background-color: var(--secondary-bg);
+            padding: 30px 40px;
+            border-radius: 8px;
+            border: 1px solid var(--secondary-accent);
+            box-shadow: 0 0 15px rgba(255, 0, 255, 0.2);
+            max-width: 550px; /* Slightly wider */
+            text-align: center;
+        }
+        .price-tier { margin-bottom: 25px; padding-bottom: 25px; border-bottom: 1px dashed rgba(255, 0, 255, 0.3); }
+        .price-tier:last-child { border-bottom: none; margin-bottom: 15px; padding-bottom: 15px;} /* Adjust last tier spacing */
+        .price-amount {
+            font-size: 2.5rem;
+            font-family: var(--font-heading);
+            color: var(--secondary-accent);
+            margin: 0 0 5px 0;
+        }
+        .price-label { font-weight: bold; font-size: 1.1rem; color: var(--text-color); margin-bottom: 5px;}
+        .price-condition { font-size: 0.9rem; font-style: italic; color: var(--muted-color); }
+        .early-bird .price-amount { color: var(--accent-neon); } /* Highlight Early Bird */
+        .early-bird .price-label { color: var(--accent-neon); }
+
+        .includes-list { list-style: none; padding: 0; margin-bottom: 25px; text-align: left; display: inline-block;}
+        .includes-list li { margin-bottom: 10px; display: flex; align-items: center;}
+        .includes-list i { margin-right: 10px; color: var(--secondary-accent);}
+        .fee-box .discount-note { font-style: italic; color: var(--muted-color); margin-bottom: 25px;}
+
+         /* Style for page header */
+         .page-header-section {
+            background-size: cover;
+            background-position: center center;
+            min-height: 30vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+        }
+        .page-header-section h1 {
+            text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">AI Quest Academy</a>
+             <nav class="main-nav">
+                 <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                     <i class="fas fa-bars"></i>
+                 </button>
+                 <ul class="nav-links">
+                     <li><a href="index.html">Home</a></li>
+                     <li><a href="program.html">Program Details</a></li>
+                     <li><a href="schedule.html">Schedule & Fees</a></li>
+                     <li><a href="location.html">Location</a></li>
+                     <li><a href="why-us.html">Why Us?</a></li>
+                     <li><a href="faq.html">FAQ</a></li>
+                     <li><a href="contact.html" class="btn btn-primary">Register Now</a></li>
+                 </ul>
+             </nav>
+        </div>
+    </header>
+
+<main>
+    <section class="page-header-section" style="background: linear-gradient(rgba(10, 10, 26, 0.8), rgba(10, 10, 26, 0.9)), url('images/placeholder-schedule-header.jpg') no-repeat center center/cover;">
+        <div class="container text-center">
+            <h1>Schedule & Fees - May 2025 Launch!</h1>
+            <p>Plan your 4-week introductory AI Quest.</p>
+        </div>
+    </section>
+
+    <section class="schedule-fees-section">
+        <div class="container">
+            <h2>Program Structure</h2>
+            <div class="structure-details">
+                 <p><i class="fas fa-calendar-alt icon-accent"></i> <strong>Duration:</strong> 4 Weeks per Cohort</p>
+                 <p><i class="fas fa-calendar-day icon-accent"></i> <strong>Frequency:</strong> Once per Week</p>
+                 <p><i class="fas fa-clock icon-accent"></i> <strong>Session:</strong> 2 Hours AI Learning (3 PM - 5 PM) + 1 Hour Trampoline (5 PM - 6 PM)</p>
+                 <p><i class="fas fa-users icon-accent"></i> <strong>Format:</strong> Small group sessions tailored by age (10-13 & 14-17).</p>
+            </div>
+
+            <!-- **** UPDATED SCHEDULE TABLE **** -->
+            <h2>Upcoming Intake - Starting May 2025</h2>
+            <p>Join our inaugural 4-week introductory course! Choose your preferred day.</p>
+            <div class="schedule-table-container">
+                <h3>May 2025 Cohort Schedule (Tentative - Register to Confirm)</h3>
+                <table class="schedule-table">
+                    <thead>
+                        <tr>
+                            <th>Age Group</th>
+                            <th>Day</th>
+                            <th>AI Session Time</th>
+                            <th>Trampoline Time</th>
+                            <th>First Session Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>10-13 Years (Innovators)</strong></td>
+                            <td><strong>Mondays</strong></td>
+                            <td>3:00 PM - 5:00 PM</td>
+                            <td>5:00 PM - 6:00 PM</td>
+                            <td>May 5th, 2025</td>
+                        </tr>
+                         <tr>
+                            <td><strong>14-17 Years (Pioneers)</strong></td>
+                            <td><strong>Tuesdays</strong></td>
+                            <td>3:00 PM - 5:00 PM</td>
+                            <td>5:00 PM - 6:00 PM</td>
+                            <td>May 6th, 2025</td>
+                        </tr>
+                         <tr>
+                            <td><strong>10-13 Years (Innovators)</strong></td>
+                            <td><strong>Wednesdays</strong></td>
+                            <td>3:00 PM - 5:00 PM</td>
+                            <td>5:00 PM - 6:00 PM</td>
+                            <td>May 7th, 2025</td>
+                        </tr>
+                         <tr>
+                            <td><strong>14-17 Years (Pioneers)</strong></td>
+                            <td><strong>Thursdays</strong></td>
+                            <td>3:00 PM - 5:00 PM</td>
+                            <td>5:00 PM - 6:00 PM</td>
+                            <td>May 8th, 2025</td>
+                        </tr>
+                    </tbody>
+                </table>
+                 <p class="note">*Trampoline park access is immediately after the AI learning session concludes. The course runs for 4 consecutive weeks from the first session date (e.g., a Monday class runs May 5, 12, 19, 26).</p>
+            </div>
+
+            <!-- **** Pricing Section (No Changes from Previous Version) **** -->
+            <h2>Investment</h2>
+             <div class="fees-section">
+                <div class="fee-box">
+                    <h3>4-Week Introductory AI Quest</h3>
+                    <!-- Early Bird Pricing -->
+                    <div class="price-tier early-bird">
+                        <p class="price-amount">SGD $388</p>
+                        <p class="price-label">Early Bird Rate</p>
+                        <p class="price-condition">(Register & Pay by April 20th, 2025)</p>
+                    </div>
+                     <!-- Normal Pricing -->
+                     <div class="price-tier normal-price">
+                        <p class="price-amount">SGD $488</p>
+                        <p class="price-label">Normal Rate</p>
+                        <p class="price-condition">(After April 20th, 2025)</p>
+                    </div>
+
+                    <ul class="includes-list">
+                        <li><i class="fas fa-check icon-secondary"></i> 4 Guided AI Learning Sessions (8 hours total)</li>
+                        <li><i class="fas fa-laptop icon-secondary"></i> Access to necessary AI tools & platforms</li>
+                        <li><i class="fas fa-child-reaching icon-secondary"></i> 4 Hours Trampoline Park Access (1 hr/session)</li>
+                        <li><i class="fas fa-certificate icon-secondary"></i> Certificate of Completion</li>
+                    </ul>
+                    <p class="discount-note">Ask about our sibling discounts!</p>
+                    <a href="contact.html" class="btn btn-accent">Register Now & Secure Your Spot!</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</main>
+
+    <footer class="site-footer">
+        <div class="container footer-content">
+             <div class="footer-links">
+                 <a href="program.html">Program</a> |
+                 <a href="schedule.html">Schedule</a> |
+                 <a href="location.html">Location</a> |
+                 <a href="faq.html">FAQ</a> |
+                 <a href="contact.html">Contact</a>
+             </div>
+             <div class="footer-social"></div>
+             <p>© <span id="current-year"></span> AI Quest Academy Pte Ltd. All Rights Reserved.</p>
+             <p>Venue: NTUC FairPrice Hub, 1 Joo Koon Circle, Singapore 629117</p>
+        </div>
+    </footer>
+
+    <!-- Link to your JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
