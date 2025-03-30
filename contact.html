@@ -14,6 +14,9 @@
     <link rel="stylesheet" href="style.css">
     <!-- Include styles specific to this page or ensure they are in style.css -->
      <style>
+        /* Ensure base styles, header, footer styles are loaded from style.css */
+
+        /* Styles specific to contact.html layout */
         .contact-flex { display: grid; grid-template-columns: 1fr; gap: 50px; }
          @media (min-width: 992px) {
              .contact-flex { grid-template-columns: 2fr 1fr; } /* Form takes more space */
@@ -36,11 +39,11 @@
         .form-group select:focus,
         .form-group textarea:focus { outline: none; border-color: var(--accent-neon); box-shadow: 0 0 10px rgba(0, 255, 255, 0.4); }
         .form-group textarea { min-height: 120px; resize: vertical; }
-        .form-group button[type="submit"] { width: 100%; padding: 15px; margin-top: 10px; }
+        .form-group button[type="submit"] { width: 100%; padding: 15px; margin-top: 10px; /* Use styles from base buttons */ }
         .required { color: var(--secondary-accent); }
         .privacy-notice small { font-size: 0.85rem; color: var(--muted-color); display: block; margin-top: -10px; }
 
-        /* --- Style for Hidden Honeypot --- */
+        /* Style for Hidden Honeypot */
         .hidden {
            position: absolute;
            width: 1px;
@@ -49,7 +52,7 @@
            margin: -1px;
            overflow: hidden;
            clip: rect(0, 0, 0, 0);
-           white-space: nowrap; /* added line */
+           white-space: nowrap;
            border: 0;
         }
 
@@ -118,26 +121,26 @@
                     <h2>Register Interest / Ask a Question</h2>
                     <p>Fill out this form to register for the May 2025 intake or ask questions. We'll reply soon!</p>
 
-                    <!-- **** NETLIFY FORM - UPDATED **** -->
+                    <!-- **** NETLIFY FORM - FINAL VERSION **** -->
                     <form id="register-form"
-                          name="registration" /* Added form name */
-                          method="POST"
-                          data-netlify="true"
-                          data-netlify-honeypot="bot-field"> {/* Added honeypot attribute */}
+                          name="registration"           /* Netlify form name */
+                          method="POST"                /* Required for Netlify */
+                          action="/thank-you.html"     /* Success page */
+                          data-netlify="true"          /* Enable Netlify forms */
+                          data-netlify-honeypot="bot-field"> {/* Enable Honeypot */
 
                         {/* Hidden honeypot input for Netlify spam filtering */}
                         <p class="hidden">
                             <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
                         </p>
 
+                        {/* Ensure every input has a unique 'name' attribute */}
                         <div class="form-group">
                             <label for="parent-name">Parent's Name <span class="required">*</span></label>
-                            {/* Updated name attribute for clarity */}
                             <input type="text" id="parent-name" name="parent_name" required>
                         </div>
                         <div class="form-group">
                             <label for="parent-email">Parent's Email <span class="required">*</span></label>
-                             {/* Updated name attribute for clarity */}
                             <input type="email" id="parent-email" name="parent_email" required>
                         </div>
                         <div class="form-group">
@@ -211,7 +214,7 @@
                             <i class="fas fa-phone icon-secondary"></i>
                              <div>
                                 <strong>Phone:</strong><br>
-                                <a href="tel:+6596734436">+65 9673 4436</a> <!-- Updated phone -->
+                                <a href="tel:+6596734436">+65 9673 4436</a>
                             </div>
                         </li>
                          <li>
@@ -221,7 +224,6 @@
                                 Monday - Friday: 10:00 AM - 6:00 PM
                             </div>
                         </li>
-                        <!-- WhatsApp Link Added Here -->
                          <li>
                              <i class="fab fa-whatsapp icon-secondary"></i>
                              <div>
@@ -257,7 +259,7 @@
         </div>
     </footer>
 
-    <!-- Link to your JavaScript -->
+    <!-- Link to your JavaScript - Make sure the form submission part is removed/commented out -->
     <script src="script.js"></script>
 </body>
 </html>
