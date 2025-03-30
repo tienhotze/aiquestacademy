@@ -25,35 +25,44 @@ document.addEventListener('DOMContentLoaded', function() {
         link.addEventListener('click', function(e) {
             // Check if it's a link targeting an element on the *same* page
             const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
 
-            if (targetElement && window.location.pathname === this.pathname) {
-                 e.preventDefault(); // Only prevent default if it's a same-page anchor
-                targetElement.scrollIntoView({
-                    behavior: 'smooth'
-                });
+            // Ensure targetId is not just "#"
+            if (targetId && targetId.length > 1) {
+                try { // Add try-catch for robustness if selector is invalid
+                    const targetElement = document.querySelector(targetId);
 
-                 // Optional: Close mobile menu after clicking a link
-                if (navLinks && navLinks.classList.contains('active')) {
-                    navLinks.classList.remove('active');
-                    menuToggle.setAttribute('aria-expanded', false);
+                    // Check if element exists and if it's a same-page link
+                    if (targetElement && (window.location.pathname === this.pathname || '/' + window.location.pathname === this.pathname || window.location.pathname === '/' + this.pathname)) {
+                         e.preventDefault(); // Only prevent default if it's a same-page anchor
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+
+                         // Optional: Close mobile menu after clicking a link
+                        if (navLinks && navLinks.classList.contains('active')) {
+                            navLinks.classList.remove('active');
+                            menuToggle.setAttribute('aria-expanded', false);
+                        }
+                    }
+                } catch (error) {
+                    console.error("Error finding element for smooth scroll:", error);
                 }
             }
         });
     });
 
-    // --- Placeholder for Form Submission ---
-    // On contact.html, you might add:
+    // --- Form Submission Code Removed ---
+    // The following block has been deleted as Netlify handles the form submission automatically.
+    /*
     const contactForm = document.getElementById('register-form');
     if (contactForm) {
         contactForm.addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent default browser submission
+            event.preventDefault(); // <-- THIS WAS THE PROBLEM LINE
             console.log('Form submitted! Data would be sent here.');
-            // **IMPORTANT:** You NEED backend code (e.g., PHP, Node.js, Netlify Forms, Formspree)
-            // to actually process this form data (send email, save to database).
-            alert('Thank you for your interest! We will get back to you soon.'); // Simple feedback
+            alert('Thank you for your interest! We will get back to you soon.');
             // Optionally clear the form: this.reset();
         });
     }
+    */
 
 }); // End DOMContentLoaded
