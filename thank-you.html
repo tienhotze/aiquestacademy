@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submission Received | AI Quest Academy</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link your main stylesheet -->
+    <style>
+        /* Basic styles for thank you page */
+        .thank-you-section {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .thank-you-content {
+            background-color: rgba(10, 13, 26, 0.65);
+            padding: 40px 50px;
+            border-radius: 8px;
+            border: 1px solid var(--accent-neon);
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+        }
+        .thank-you-content h1 { color: var(--accent-neon); margin-bottom: 20px;}
+        .thank-you-content p { color: var(--text-color); margin-bottom: 30px; }
+    </style>
+</head>
+<body>
+    <!-- Include your standard site header -->
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">AI Quest Academy</a>
+            <nav class="main-nav">
+                <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                    <i class="fas fa-bars"></i>
+                </button>
+                 <ul class="nav-links">
+                     <li><a href="index.html">Home</a></li>
+                     <li><a href="program.html">Program Details</a></li>
+                     <li><a href="schedule.html">Schedule & Fees</a></li>
+                     <li><a href="location.html">Location</a></li>
+                     <li><a href="why-us.html">Why Us?</a></li>
+                     <li><a href="faq.html">FAQ</a></li>
+                     <li><a href="contact.html">Contact</a></li>
+                 </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="thank-you-section">
+            <div class="container">
+                <div class="thank-you-content">
+                    <h1>Thank You!</h1>
+                    <p>Your submission has been received. We'll get back to you shortly.</p>
+                    <a href="/" class="btn btn-secondary">Return to Homepage</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Include your standard site footer -->
+    <footer class="site-footer">
+         <div class="container footer-content">
+             <div class="footer-links">
+                 <a href="program.html">Program</a> |
+                 <a href="schedule.html">Schedule</a> |
+                 <a href="location.html">Location</a> |
+                 <a href="faq.html">FAQ</a> |
+                 <a href="contact.html">Contact</a>
+             </div>
+             <div class="footer-social"></div>
+             <p>© <span id="current-year"></span> AI Quest Academy Pte Ltd. All Rights Reserved.</p>
+             <p>Venue: NTUC FairPrice Hub, 1 Joo Koon Circle, Singapore 629117</p>
+         </div>
+     </footer>
+     <script src="script.js"></script>
+</body>
+</html>
