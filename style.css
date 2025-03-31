@@ -635,3 +635,27 @@ section {
     }
     .feature-icon { margin-bottom: 15px; }
 }
+
+/* --- Footer Social Icon Styling --- */
+.footer-social {
+    margin-bottom: 15px; /* Existing margin */
+    line-height: 1; /* Prevent extra space around icon */
+}
+
+.footer-social a {
+    color: var(--muted-color); /* Default color */
+    font-size: 1.8rem; /* Make icon larger */
+    margin: 0 10px; /* Add space around the icon */
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-block; /* Needed for transform */
+}
+
+.footer-social a:hover {
+     color: #25D366; /* WhatsApp Green on hover */
+     transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* Optional: Style specific icons if needed */
+/* .footer-social a i.fa-whatsapp { */
+     /* Specific styles for WhatsApp if default isn't desired */
+/* } */
