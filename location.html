@@ -3,21 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- **** UPDATE TITLE **** -->
     <title>Location | AI Quest Academy Singapore | Joo Koon Hub</title>
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome (for icons - optional but useful) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Link to your CSS -->
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Styles specific to location.html layout */
+        .location-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-bottom: 50px; }
+        .location-info .address { font-size: 1.1rem; margin-bottom: 25px; line-height: 1.7; }
+        .location-info .address i { margin-right: 10px; color: var(--accent-neon); display: inline-block; width: 15px; /* Align icon */ }
+        .location-info h3 { margin-top: 25px; color: var(--secondary-accent); }
+        .location-info ul { list-style: none; padding-left: 0; }
+        .location-info ul li { margin-bottom: 10px; display: flex; align-items: flex-start; /* Align items to top */ }
+        .location-info ul i { margin-right: 10px; width: 20px; text-align: center; color: var(--secondary-accent); margin-top: 4px; /* Adjust icon alignment */ }
+        .location-map iframe { border-radius: 8px; border: 1px solid rgba(0, 255, 255, 0.3); }
+
+        .trampoline-highlight { margin-top: 60px; padding-top: 40px; border-top: 1px solid rgba(0, 255, 255, 0.2); text-align: center; }
+        .trampoline-content { display: flex; flex-direction: column; align-items: center; gap: 30px; margin-top: 30px; }
+        @media (min-width: 768px) {
+            .trampoline-content { flex-direction: row; text-align: left; align-items: flex-start; }
+        }
+        .trampoline-image { flex: 1; max-width: 450px; min-width: 300px; }
+        .trampoline-image img { border-radius: 8px; border: 2px solid var(--accent-neon); box-shadow: 0 0 15px rgba(0, 255, 255, 0.3); width: 100%; }
+        .trampoline-text { flex: 1; }
+        .trampoline-text p { font-size: 1.05rem; }
+        .trampoline-text .btn { margin-top: 15px; } /* Add space above button */
+     </style>
 </head>
 <body>
     <header class="site-header">
         <div class="container header-container">
-             <!-- **** UPDATE LOGO TEXT **** -->
             <a href="index.html" class="logo">AI Quest Academy</a>
              <nav class="main-nav">
                  <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
@@ -27,19 +44,18 @@
                      <li><a href="index.html">Home</a></li>
                      <li><a href="program.html">Program Details</a></li>
                      <li><a href="schedule.html">Schedule & Fees</a></li>
-                     <li><a href="location.html">Location</a></li>
-                     <li><a href="why-us.html">Why Us?</a></li>
+                     <li><a href="location.html" class="active">Location</a></li> <li><a href="why-us.html">Why Us?</a></li>
                      <li><a href="faq.html">FAQ</a></li>
                      <li><a href="contact.html" class="btn btn-primary">Register Now</a></li>
                  </ul>
-             </nav>
-        </div>
-    </header>
+             </nav> <a href="https://wa.me/6596734436" target="_blank" rel="noopener noreferrer" title="Chat with us on WhatsApp" class="whatsapp-header-icon">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            </div> </header>
 
 <main>
-    <section class="page-header-section" style="background: linear-gradient(rgba(10, 10, 26, 0.8), rgba(10, 10, 26, 0.9)), url('images/placeholder-location-header.jpg') no-repeat center center/cover; min-height: 30vh; display: flex; align-items: center;">
+    <section class="page-header-section" style="background: linear-gradient(rgba(10, 10, 26, 0.8), rgba(10, 10, 26, 0.9)), url('images/placeholder-location-header.jpg') no-repeat center center/cover;">
         <div class="container text-center">
-            <!-- **** UPDATE HEADER **** -->
             <h1>Visit AI Quest Academy at Joo Koon</h1>
             <p>Conveniently located within the vibrant NTUC FairPrice Hub.</p>
         </div>
@@ -48,60 +64,54 @@
     <section class="location-details-section">
         <div class="container">
             <div class="location-grid">
-                <!-- Address & Directions -->
                 <div class="location-info">
                     <h2>Our Hub</h2>
                     <p class="address">
                         <i class="fas fa-map-marker-alt icon-accent"></i>
-                         <!-- **** UPDATE NAME **** -->
-                        <strong>AI Quest Academy Pte Ltd</strong><br>
-                        (Learning Space within)<br>
-                        NTUC FairPrice Hub<br>
-                        1 Joo Koon Circle<br>
-                        Singapore 629117
+                        <span> <strong>AI Quest Academy Pte Ltd</strong><br>
+                            (Learning Space within)<br>
+                            NTUC FairPrice Hub<br>
+                            1 Joo Koon Circle<br>
+                            Singapore 629117
+                        </span>
                     </p>
                     <h3>Getting Here:</h3>
                     <ul>
-                        <li><i class="fas fa-subway icon-secondary"></i> <strong>MRT:</strong> Directly connected to Joo Koon MRT Station (EW29) on the East-West Line.</li>
-                        <li><i class="fas fa-bus icon-secondary"></i> <strong>Bus:</strong> Served by various bus routes stopping near Joo Koon Interchange / FairPrice Hub.</li>
-                        <li><i class="fas fa-car icon-secondary"></i> <strong>Driving:</strong> Accessible via AYE and PIE. Parking is available within FairPrice Hub (standard charges apply).</li>
+                        <li><i class="fas fa-subway icon-secondary"></i> <span><strong>MRT:</strong> Directly connected to Joo Koon MRT Station (EW29) on the East-West Line.</span></li>
+                        <li><i class="fas fa-bus icon-secondary"></i> <span><strong>Bus:</strong> Served by various bus routes stopping near Joo Koon Interchange / FairPrice Hub.</span></li>
+                        <li><i class="fas fa-car icon-secondary"></i> <span><strong>Driving:</strong> Accessible via AYE and PIE. Parking is available within FairPrice Hub (standard charges apply).</span></li>
                     </ul>
                     <h3>Our Learning Space:</h3>
                     <p>We utilize a modern, dedicated area within the Hub, equipped for interactive digital learning. It's a comfortable and focused environment designed for collaboration.</p>
                 </div>
 
-                <!-- Map -->
                 <div class="location-map">
-                     <!-- Embed Google Map Here -->
-                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.711832053899!2d103.69686317496586!3d1.3371188986334963!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da0f803a936091%3A0x73a844cb77e89f07!2sFairPrice%20Hub!5e0!3m2!1sen!2ssg!4v1709865432109!5m2!1sen!2ssg" /* REPLACE THIS URL if needed */
-                        width="100%"
-                        height="400"
-                        style="border:0;"
-                        allowfullscreen=""
-                        loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
+                      <iframe
+                          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.704595066763!2d103.6959513152386!3d1.332363999006787!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da0f8b4a0139a7%3A0x9d1c1a4e1a5b1a1c!2sFairPrice%20Hub!5e0!3m2!1sen!2ssg!4v1678888888888!5m2!1sen!2ssg" /* EXAMPLE URL */
+                          width="100%"
+                          height="400"
+                          style="border:0;"
+                          allowfullscreen=""
+                          loading="lazy"
+                          referrerpolicy="no-referrer-when-downgrade">
+                      </iframe>
                 </div>
             </div>
 
-             <!-- Trampoline Highlight -->
-            <div class="trampoline-highlight">
-                 <h2>The Fun Zone: Trampoline Park!</h2>
-                 <div class="trampoline-content">
-                     <div class="trampoline-image">
-                          <!-- Placeholder for Trampoline Park Image -->
-                         <img src="images/placeholder-trampoline.jpg" alt="Kids having fun at the trampoline park">
-                     </div>
-                     <div class="trampoline-text">
-                          <!-- **** UPDATE TEXT (Trampoline time) **** -->
-                         <p>What makes our program unique? After focusing hard on learning AI, kids get to burn off energy and have a blast with **one hour of free access** to the exciting trampoline park located right here!</p>
-                         <p>Access is included immediately following each 2-hour AI session.</p>
-                         <p>(Please note: Trampoline park rules and supervision guidelines apply).</p>
-                         <a href="contact.html" class="btn btn-accent">Have Questions? Ask Us!</a>
-                     </div>
-                 </div>
-            </div>
+              <div class="trampoline-highlight">
+                  <h2>The Fun Zone: Trampoline Park!</h2>
+                  <div class="trampoline-content">
+                      <div class="trampoline-image">
+                           <img src="images/placeholder-trampoline.jpg" alt="Kids having fun at the trampoline park">
+                      </div>
+                      <div class="trampoline-text">
+                          <p>What makes our program unique? After focusing hard on learning AI, kids get to burn off energy and have a blast with **one hour of free access** to the exciting trampoline park located right here!</p>
+                          <p>Access is included immediately following each 2-hour AI session.</p>
+                          <p>(Please note: Trampoline park rules and supervision guidelines apply).</p>
+                          <a href="contact.html" class="btn btn-accent">Have Questions? Ask Us!</a>
+                      </div>
+                  </div>
+             </div>
         </div>
     </section>
 </main>
@@ -114,50 +124,27 @@
                  <a href="location.html">Location</a> |
                  <a href="faq.html">FAQ</a> |
                  <a href="contact.html">Contact</a>
-             </div>
+            </div>
 
-             <!-- **** WHATSAPP ICON ADDED HERE **** -->
-             <div class="footer-social">
-                 <a href="https://wa.me/6596734436" target="_blank" rel="noopener noreferrer" title="Chat with us on WhatsApp">
-                     <i class="fab fa-whatsapp"></i> <!-- Font Awesome WhatsApp Icon -->
-                 </a>
-                 <!-- Add other social icons here if needed later -->
-                 <!-- Example: <a href="#" target="_blank" rel="noopener noreferrer" title="Follow us on Facebook"><i class="fab fa-facebook-f"></i></a> -->
-             </div>
-             <!-- **** END WHATSAPP ICON SECTION **** -->
-
-             <p>© <span id="current-year"></span> AI Quest Academy Pte Ltd. All Rights Reserved.</p>
-             <p>Venue: NTUC FairPrice Hub, 1 Joo Koon Circle, Singapore 629117</p>
+            <div class="footer-social">
+                 </div>
+            <p>© <span id="current-year">2025</span> AI Quest Academy Pte Ltd. All Rights Reserved.</p> <p>Venue: NTUC FairPrice Hub, 1 Joo Koon Circle, Singapore 629117</p>
         </div>
     </footer>
 
-    <!-- Link to your JavaScript -->
     <script src="script.js"></script>
-</body>
-</html>
-
-    <!-- Link to your JavaScript -->
-    <script src="script.js"></script>
-    <!-- Add relevant CSS from previous response -->
-     <style>
-        .location-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-bottom: 50px; }
-        .location-info .address { font-size: 1.1rem; margin-bottom: 25px; line-height: 1.7; }
-        .location-info .address i { margin-right: 10px; color: var(--accent-neon); }
-        .location-info h3 { margin-top: 25px; color: var(--secondary-accent); }
-        .location-info ul { list-style: none; padding-left: 0; }
-        .location-info ul li { margin-bottom: 10px; display: flex; align-items: center; }
-        .location-info ul i { margin-right: 10px; width: 20px; text-align: center; color: var(--secondary-accent); }
-        .location-map iframe { border-radius: 8px; border: 1px solid rgba(0, 255, 255, 0.3); }
-
-        .trampoline-highlight { margin-top: 60px; padding-top: 40px; border-top: 1px solid rgba(0, 255, 255, 0.2); text-align: center; }
-        .trampoline-content { display: flex; flex-direction: column; align-items: center; gap: 30px; margin-top: 30px; }
-        @media (min-width: 768px) {
-            .trampoline-content { flex-direction: row; text-align: left; }
-        }
-        .trampoline-image { flex: 1; max-width: 450px; }
-        .trampoline-image img { border-radius: 8px; border: 2px solid var(--accent-neon); box-shadow: 0 0 15px rgba(0, 255, 255, 0.3); }
-        .trampoline-text { flex: 1; }
-        .trampoline-text p { font-size: 1.05rem; }
-    </style>
+     <script>
+         document.getElementById('current-year').textContent = new Date().getFullYear();
+         // Basic mobile menu toggle (ensure this is also in script.js or common include)
+         const menuToggle = document.querySelector('.menu-toggle');
+         const navLinks = document.querySelector('.main-nav .nav-links');
+         if (menuToggle && navLinks) {
+             menuToggle.addEventListener('click', () => {
+                 navLinks.classList.toggle('active');
+                 const isExpanded = navLinks.classList.contains('active');
+                 menuToggle.setAttribute('aria-expanded', isExpanded);
+             });
+         }
+     </script>
 </body>
 </html>
