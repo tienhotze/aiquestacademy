@@ -1,33 +1,49 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Submission Received | AI Quest Academy</title>
-    <link rel="stylesheet" href="style.css"> <!-- Link your main stylesheet -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
     <style>
-        /* Basic styles for thank you page */
+        /* Basic styles for thank you page (can be merged into style.css) */
         .thank-you-section {
-            min-height: 60vh;
+            min-height: 60vh; /* Ensure it takes up significant vertical space */
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
+            padding: 60px 20px; /* Add padding */
         }
         .thank-you-content {
-            background-color: rgba(10, 13, 26, 0.65);
+            background-color: rgba(10, 13, 26, 0.75); /* Slightly more opaque bg */
             padding: 40px 50px;
             border-radius: 8px;
             border: 1px solid var(--accent-neon);
             box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+            max-width: 600px; /* Limit width */
+            width: 100%;
         }
-        .thank-you-content h1 { color: var(--accent-neon); margin-bottom: 20px;}
-        .thank-you-content p { color: var(--text-color); margin-bottom: 30px; }
+        .thank-you-content h1 {
+             color: var(--accent-neon);
+             margin-bottom: 20px;
+             font-size: 2.2rem; /* Adjust size */
+         }
+        .thank-you-content p {
+            color: var(--text-color);
+            margin-bottom: 30px;
+            font-size: 1.1rem; /* Adjust size */
+        }
+        .thank-you-content .btn {
+            margin-top: 10px; /* Add space above button */
+        }
     </style>
 </head>
 <body>
-    <!-- Include your standard site header -->
     <header class="site-header">
         <div class="container header-container">
             <a href="index.html" class="logo">AI Quest Academy</a>
@@ -35,61 +51,65 @@
                 <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
                     <i class="fas fa-bars"></i>
                 </button>
-                 <ul class="nav-links">
-                     <li><a href="index.html">Home</a></li>
-                     <li><a href="program.html">Program Details</a></li>
-                     <li><a href="schedule.html">Schedule & Fees</a></li>
-                     <li><a href="location.html">Location</a></li>
-                     <li><a href="why-us.html">Why Us?</a></li>
-                     <li><a href="faq.html">FAQ</a></li>
-                     <li><a href="contact.html">Contact</a></li>
-                 </ul>
-            </nav>
-        </div>
-    </header>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="program.html">Program Details</a></li>
+                    <li><a href="schedule.html">Schedule & Fees</a></li>
+                    <li><a href="location.html">Location</a></li>
+                    <li><a href="why-us.html">Why Us?</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav> <a href="https://wa.me/6596734436" target="_blank" rel="noopener noreferrer" title="Chat with us on WhatsApp" class="whatsapp-header-icon">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            </div> </header>
 
     <main>
         <section class="thank-you-section">
             <div class="container">
                 <div class="thank-you-content">
                     <h1>Thank You!</h1>
-                    <p>Your submission has been received. We'll get back to you shortly.</p>
-                    <a href="/" class="btn btn-secondary">Return to Homepage</a>
-                </div>
+                    <p>Your submission has been received. We appreciate you reaching out and will get back to you shortly.</p>
+                    <a href="index.html" class="btn btn-secondary">Return to Homepage</a> </div>
             </div>
         </section>
     </main>
 
-    <!-- Include your standard site footer -->
     <footer class="site-footer">
         <div class="container footer-content">
             <div class="footer-links">
-                 <a href="program.html">Program</a> |
-                 <a href="schedule.html">Schedule</a> |
-                 <a href="location.html">Location</a> |
-                 <a href="faq.html">FAQ</a> |
-                 <a href="contact.html">Contact</a>
-             </div>
+                <a href="program.html">Program</a> |
+                <a href="schedule.html">Schedule</a> |
+                <a href="location.html">Location</a> |
+                <a href="faq.html">FAQ</a> |
+                <a href="contact.html">Contact</a>
+            </div>
 
-             <!-- **** WHATSAPP ICON ADDED HERE **** -->
-             <div class="footer-social">
-                 <a href="https://wa.me/6596734436" target="_blank" rel="noopener noreferrer" title="Chat with us on WhatsApp">
-                     <i class="fab fa-whatsapp"></i> <!-- Font Awesome WhatsApp Icon -->
-                 </a>
-                 <!-- Add other social icons here if needed later -->
-                 <!-- Example: <a href="#" target="_blank" rel="noopener noreferrer" title="Follow us on Facebook"><i class="fab fa-facebook-f"></i></a> -->
-             </div>
-             <!-- **** END WHATSAPP ICON SECTION **** -->
-
-             <p>© <span id="current-year"></span> AI Quest Academy Pte Ltd. All Rights Reserved.</p>
-             <p>Venue: NTUC FairPrice Hub, 1 Joo Koon Circle, Singapore 629117</p>
+            <div class="footer-social">
+                 </div>
+            <p>© <span id="current-year">2025</span> AI Quest Academy Pte Ltd. All Rights Reserved.</p> <p>Venue: NTUC FairPrice Hub, 1 Joo Koon Circle, Singapore 629117</p>
         </div>
     </footer>
 
-    <!-- Link to your JavaScript -->
     <script src="script.js"></script>
-</body>
-</html>
-     <script src="script.js"></script>
+     <script>
+         // Ensure current-year element exists before trying to set it
+         const yearSpan = document.getElementById('current-year');
+         if (yearSpan) {
+            yearSpan.textContent = new Date().getFullYear();
+         }
+
+         // Basic mobile menu toggle (ensure this is also in script.js or common include)
+         const menuToggle = document.querySelector('.menu-toggle');
+         const navLinks = document.querySelector('.main-nav .nav-links');
+         if (menuToggle && navLinks) {
+             menuToggle.addEventListener('click', () => {
+                 navLinks.classList.toggle('active');
+                 const isExpanded = navLinks.classList.contains('active');
+                 menuToggle.setAttribute('aria-expanded', isExpanded);
+             });
+         }
+     </script>
 </body>
 </html>
