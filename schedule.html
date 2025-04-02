@@ -4,20 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Schedule & Fees | AI Quest Academy Singapore</title>
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome (for icons - optional but useful) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Link to your CSS -->
     <link rel="stylesheet" href="style.css">
-    <!-- Include styles specific to this page directly or ensure they are in style.css -->
     <style>
+        /* Styles specific to schedule.html layout */
         .structure-details p { font-size: 1.1rem; margin-bottom: 15px; display: flex; align-items: center; }
         .structure-details i { margin-right: 15px; width: 20px; text-align: center; color: var(--accent-neon); }
-        .schedule-table-container { margin-top: 40px; margin-bottom: 40px; }
-        .schedule-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        .schedule-table-container { margin-top: 40px; margin-bottom: 40px; overflow-x: auto; /* For responsive tables */ }
+        .schedule-table { width: 100%; border-collapse: collapse; margin-top: 20px; min-width: 600px; /* Prevent excessive squishing */ }
         .schedule-table th, .schedule-table td {
             border: 1px solid rgba(0, 255, 255, 0.3);
             padding: 12px 15px;
@@ -29,7 +26,7 @@
         .schedule-table tbody tr:nth-child(odd) { background-color: rgba(26, 26, 58, 0.2); }
         .schedule-table .note { font-size: 0.9rem; margin-top: 10px; color: var(--muted-color); }
 
-        .fees-section { margin-top: 50px; display: flex; justify-content: center; }
+        .fees-section { margin-top: 50px; display: flex; justify-content: center; flex-wrap: wrap; /* Allow wrapping if needed */ }
         .fee-box {
             background-color: var(--secondary-bg);
             padding: 30px 40px;
@@ -37,7 +34,9 @@
             border: 1px solid var(--secondary-accent);
             box-shadow: 0 0 15px rgba(255, 0, 255, 0.2);
             max-width: 550px; /* Slightly wider */
+            width: 100%; /* Take full width allowed by max-width */
             text-align: center;
+            margin: 15px; /* Add margin for spacing if multiple boxes wrap */
         }
         .price-tier { margin-bottom: 25px; padding-bottom: 25px; border-bottom: 1px dashed rgba(255, 0, 255, 0.3); }
         .price-tier:last-child { border-bottom: none; margin-bottom: 15px; padding-bottom: 15px;} /* Adjust last tier spacing */
@@ -57,8 +56,8 @@
         .includes-list i { margin-right: 10px; color: var(--secondary-accent);}
         .fee-box .discount-note { font-style: italic; color: var(--muted-color); margin-bottom: 25px;}
 
-         /* Style for page header */
-         .page-header-section {
+        /* Style for page header (already likely in style.css but kept here for clarity) */
+        .page-header-section {
             background-size: cover;
             background-position: center center;
             min-height: 30vh;
@@ -83,15 +82,15 @@
                  <ul class="nav-links">
                      <li><a href="index.html">Home</a></li>
                      <li><a href="program.html">Program Details</a></li>
-                     <li><a href="schedule.html">Schedule & Fees</a></li>
-                     <li><a href="location.html">Location</a></li>
+                     <li><a href="schedule.html" class="active">Schedule & Fees</a></li> <li><a href="location.html">Location</a></li>
                      <li><a href="why-us.html">Why Us?</a></li>
                      <li><a href="faq.html">FAQ</a></li>
                      <li><a href="contact.html" class="btn btn-primary">Register Now</a></li>
                  </ul>
-             </nav>
-        </div>
-    </header>
+             </nav> <a href="https://wa.me/6596734436" target="_blank" rel="noopener noreferrer" title="Chat with us on WhatsApp" class="whatsapp-header-icon">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            </div> </header>
 
 <main>
     <section class="page-header-section" style="background: linear-gradient(rgba(10, 10, 26, 0.8), rgba(10, 10, 26, 0.9)), url('images/placeholder-schedule-header.jpg') no-repeat center center/cover;">
@@ -111,7 +110,6 @@
                  <p><i class="fas fa-users icon-accent"></i> <strong>Format:</strong> Small group sessions tailored by age (10-13 & 14-17).</p>
             </div>
 
-            <!-- **** UPDATED SCHEDULE TABLE **** -->
             <h2>Upcoming Intake - Starting May 2025</h2>
             <p>Join our inaugural 4-week introductory course! Choose your preferred day.</p>
             <div class="schedule-table-container">
@@ -160,34 +158,31 @@
                  <p class="note">*Trampoline park access is immediately after the AI learning session concludes. The course runs for 4 consecutive weeks from the first session date (e.g., a Monday class runs May 5, 12, 19, 26).</p>
             </div>
 
-            <!-- **** Pricing Section (No Changes from Previous Version) **** -->
             <h2>Investment</h2>
-             <div class="fees-section">
-                <div class="fee-box">
-                    <h3>4-Week Introductory AI Quest</h3>
-                    <!-- Early Bird Pricing -->
-                    <div class="price-tier early-bird">
-                        <p class="price-amount">SGD $388</p>
-                        <p class="price-label">Early Bird Rate</p>
-                        <p class="price-condition">(Register & Pay by April 20th, 2025)</p>
-                    </div>
-                     <!-- Normal Pricing -->
-                     <div class="price-tier normal-price">
-                        <p class="price-amount">SGD $488</p>
-                        <p class="price-label">Normal Rate</p>
-                        <p class="price-condition">(After April 20th, 2025)</p>
-                    </div>
+              <div class="fees-section">
+                  <div class="fee-box">
+                      <h3>4-Week Introductory AI Quest</h3>
+                      <div class="price-tier early-bird">
+                          <p class="price-amount">SGD $388</p>
+                          <p class="price-label">Early Bird Rate</p>
+                          <p class="price-condition">(Register & Pay by April 20th, 2025)</p>
+                      </div>
+                       <div class="price-tier normal-price">
+                          <p class="price-amount">SGD $488</p>
+                          <p class="price-label">Normal Rate</p>
+                          <p class="price-condition">(After April 20th, 2025)</p>
+                      </div>
 
-                    <ul class="includes-list">
-                        <li><i class="fas fa-check icon-secondary"></i> 4 Guided AI Learning Sessions (8 hours total)</li>
-                        <li><i class="fas fa-laptop icon-secondary"></i> Access to necessary AI tools & platforms</li>
-                        <li><i class="fas fa-child-reaching icon-secondary"></i> 4 Hours Trampoline Park Access (1 hr/session)</li>
-                        <li><i class="fas fa-certificate icon-secondary"></i> Certificate of Completion</li>
-                    </ul>
-                    <p class="discount-note">Ask about our sibling discounts!</p>
-                    <a href="contact.html" class="btn btn-accent">Register Now & Secure Your Spot!</a>
-                </div>
-            </div>
+                      <ul class="includes-list">
+                          <li><i class="fas fa-check icon-secondary"></i> 4 Guided AI Learning Sessions (8 hours total)</li>
+                          <li><i class="fas fa-laptop icon-secondary"></i> Access to necessary AI tools & platforms</li>
+                          <li><i class="fas fa-child-reaching icon-secondary"></i> 4 Hours Trampoline Park Access (1 hr/session)</li>
+                          <li><i class="fas fa-certificate icon-secondary"></i> Certificate of Completion</li>
+                      </ul>
+                      <p class="discount-note">Ask about our sibling discounts!</p>
+                      <a href="contact.html" class="btn btn-accent">Register Now & Secure Your Spot!</a>
+                  </div>
+              </div>
 
         </div>
     </section>
@@ -201,29 +196,27 @@
                  <a href="location.html">Location</a> |
                  <a href="faq.html">FAQ</a> |
                  <a href="contact.html">Contact</a>
-             </div>
+            </div>
 
-             <!-- **** WHATSAPP ICON ADDED HERE **** -->
-             <div class="footer-social">
-                 <a href="https://wa.me/6596734436" target="_blank" rel="noopener noreferrer" title="Chat with us on WhatsApp">
-                     <i class="fab fa-whatsapp"></i> <!-- Font Awesome WhatsApp Icon -->
-                 </a>
-                 <!-- Add other social icons here if needed later -->
-                 <!-- Example: <a href="#" target="_blank" rel="noopener noreferrer" title="Follow us on Facebook"><i class="fab fa-facebook-f"></i></a> -->
-             </div>
-             <!-- **** END WHATSAPP ICON SECTION **** -->
-
-             <p>© <span id="current-year"></span> AI Quest Academy Pte Ltd. All Rights Reserved.</p>
-             <p>Venue: NTUC FairPrice Hub, 1 Joo Koon Circle, Singapore 629117</p>
+            <div class="footer-social">
+                 </div>
+            <p>© <span id="current-year">2025</span> AI Quest Academy Pte Ltd. All Rights Reserved.</p> <p>Venue: NTUC FairPrice Hub, 1 Joo Koon Circle, Singapore 629117</p>
         </div>
     </footer>
 
-    <!-- Link to your JavaScript -->
     <script src="script.js"></script>
-</body>
-</html>
-
-    <!-- Link to your JavaScript -->
-    <script src="script.js"></script>
+     <script>
+         document.getElementById('current-year').textContent = new Date().getFullYear();
+         // Basic mobile menu toggle (ensure this is also in script.js or common include)
+         const menuToggle = document.querySelector('.menu-toggle');
+         const navLinks = document.querySelector('.main-nav .nav-links');
+         if (menuToggle && navLinks) {
+             menuToggle.addEventListener('click', () => {
+                 navLinks.classList.toggle('active');
+                 const isExpanded = navLinks.classList.contains('active');
+                 menuToggle.setAttribute('aria-expanded', isExpanded);
+             });
+         }
+     </script>
 </body>
 </html>
