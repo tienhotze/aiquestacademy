@@ -3,42 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- **** UPDATE TITLE **** -->
     <title>Introductory AI Program | AI Quest Academy Singapore</title>
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome (for icons - optional but useful) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Link to your CSS -->
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Styles specific to program.html layout */
+        .accent-border-left { border-left: 5px solid var(--accent-neon); padding-left: 15px; margin-top: 40px; }
+        .secondary-border-left { border-left: 5px solid var(--secondary-accent); padding-left: 15px; margin-top: 40px; }
+        .age-group { margin-bottom: 40px; background: rgba(26, 26, 58, 0.4); padding: 25px; border-radius: 8px;}
+        .age-group-content { margin-top: 15px; }
+        .module-list { list-style: none; padding-left: 0; margin-top: 15px;}
+        .module-list li { margin-bottom: 15px; line-height: 1.5; } /* Increased spacing */
+        .module-list strong { color: var(--text-color); display: block; margin-bottom: 3px; } /* Highlight week title */
+        .intro-text { font-size: 1.1rem; max-width: 800px; margin: 10px auto 40px auto; text-align: center;}
+        .program-footer { margin-top: 50px; padding-top: 30px; border-top: 1px solid rgba(0, 255, 255, 0.2); }
+       </style>
 </head>
 <body>
     <header class="site-header">
         <div class="container header-container">
-             <!-- **** UPDATE LOGO TEXT **** -->
             <a href="index.html" class="logo">AI Quest Academy</a>
-             <nav class="main-nav">
-                 <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
-                     <i class="fas fa-bars"></i>
-                 </button>
-                 <ul class="nav-links">
-                     <li><a href="index.html">Home</a></li>
-                     <li><a href="program.html">Program Details</a></li>
-                     <li><a href="schedule.html">Schedule & Fees</a></li>
-                     <li><a href="location.html">Location</a></li>
-                     <li><a href="why-us.html">Why Us?</a></li>
-                     <li><a href="faq.html">FAQ</a></li>
-                     <li><a href="contact.html" class="btn btn-primary">Register Now</a></li>
-                 </ul>
-             </nav>
-        </div>
-    </header>
+            <nav class="main-nav">
+                <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="program.html" class="active">Program Details</a></li> <li><a href="schedule.html">Schedule & Fees</a></li>
+                    <li><a href="location.html">Location</a></li>
+                    <li><a href="why-us.html">Why Us?</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contact.html" class="btn btn-primary">Register Now</a></li>
+                </ul>
+            </nav> <a href="https://wa.me/6596734436" target="_blank" rel="noopener noreferrer" title="Chat with us on WhatsApp" class="whatsapp-header-icon">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            </div> </header>
 
 <main>
-    <!-- **** UPDATE PAGE HEADER **** -->
-    <section class="page-header-section" style="background: linear-gradient(rgba(10, 10, 26, 0.8), rgba(10, 10, 26, 0.9)), url('images/placeholder-program-header.jpg') no-repeat center center/cover; min-height: 30vh; display: flex; align-items: center;">
+    <section class="page-header-section" style="background: linear-gradient(rgba(10, 10, 26, 0.8), rgba(10, 10, 26, 0.9)), url('images/placeholder-program-header.jpg') no-repeat center center/cover;">
         <div class="container text-center">
             <h1>4-Week Introductory AI Quest</h1>
             <p>A hands-on journey into AI essentials, designed for young innovators and pioneers.</p>
@@ -47,38 +53,29 @@
 
     <section class="program-details-section">
         <div class="container">
-            <!-- **** UPDATE INTRO TEXT **** -->
             <h2>Curriculum Overview (Ages 10-17)</h2>
             <p class="intro-text">This 4-week introductory program runs once per week (2 hours learning + 1 hour trampoline fun). It covers key AI concepts with practical activities tailored for two age groups.</p>
 
-            <!-- **** REMOVED Age Group 1: Younger Elementary (7-9) **** -->
-
-            <!-- Age Group 2: Older Elementary / Middle (10-13) -->
-            <!-- **** UPDATE HEADING & DESCRIPTION **** -->
             <article class="age-group">
                 <h3 class="age-group-title secondary-border-left">Ages 10-13 (Innovators - Intro)</h3>
                  <div class="age-group-content">
                     <p><strong>Focus:</strong> Grasping core AI ideas, basic prompting, using AI for search and creativity, understanding safe online practices.</p>
                     <h4>Weekly Quest Log:</h4>
-                    <!-- **** UPDATE MODULE LIST **** -->
                     <ul class="module-list">
                         <li><strong>Week 1: Meet AI & Your First Prompt</strong><br> What is AI? Interacting with chatbots, giving clear instructions for fun results. (Safety: No personal info!)</li>
                         <li><strong>Week 2: AI Search & Finding Facts</strong><br> Using AI for questions vs. Google. Asking 'Why?'. Spotting weird answers. (Critical Thinking: Double-check facts!)</li>
                         <li><strong>Week 3: Creating with AI: Image Generation</strong><br> Using AI art tools. Prompting for simple objects/scenes. Trying basic styles. (Ethics: No fake images of people.)</li>
                         <li><strong>Week 4: AI as Your Learning Buddy & Wrap-up</strong><br> Using AI to explain concepts, summarize text, brainstorm ideas. Mini-challenge combo. (Honesty: Use AI to learn, not cheat!)</li>
                     </ul>
-                     <p><strong>Format:</strong> 1 session per week (2hrs learning + 1hr jump). Mix of guided activities, pair work, and individual exploration.</p>
+                    <p><strong>Format:</strong> 1 session per week (2hrs learning + 1hr jump). Mix of guided activities, pair work, and individual exploration.</p>
                 </div>
             </article>
 
-            <!-- Age Group 3: Middle / High School (14-17) -->
-             <!-- **** UPDATE HEADING & DESCRIPTION **** -->
             <article class="age-group">
                 <h3 class="age-group-title accent-border-left">Ages 14-17 (Pioneers - Intro)</h3>
                  <div class="age-group-content">
                      <p><strong>Focus:</strong> Understanding Generative AI basics, structured prompting, critical AI search evaluation, exploring image generation nuances, applying AI to learning effectively.</p>
                     <h4>Weekly Quest Log:</h4>
-                     <!-- **** UPDATE MODULE LIST **** -->
                     <ul class="module-list">
                         <li><strong>Week 1: Meet AI & Your First Prompt</strong><br> Intro to GenAI/LLMs. Structured prompts (Role, Task). Experimenting with tone/style. (Safety: Think before clicking!)</li>
                         <li><strong>Week 2: AI Search & Finding Facts</strong><br> Critical AI search for research. Checking sources/citations. Recognizing bias/hallucinations. (Critical Thinking: AI isn't perfect!)</li>
@@ -89,7 +86,6 @@
                 </div>
             </article>
 
-            <!-- **** UPDATE FOOTER TEXT **** -->
             <div class="program-footer text-center">
                 <h2>Ready to Begin Your Quest?</h2>
                 <p>This 4-week intro is the perfect starting point for exploring the exciting world of AI!</p>
@@ -108,41 +104,27 @@
                  <a href="location.html">Location</a> |
                  <a href="faq.html">FAQ</a> |
                  <a href="contact.html">Contact</a>
-             </div>
+            </div>
 
-             <!-- **** WHATSAPP ICON ADDED HERE **** -->
-             <div class="footer-social">
-                 <a href="https://wa.me/6596734436" target="_blank" rel="noopener noreferrer" title="Chat with us on WhatsApp">
-                     <i class="fab fa-whatsapp"></i> <!-- Font Awesome WhatsApp Icon -->
-                 </a>
-                 <!-- Add other social icons here if needed later -->
-                 <!-- Example: <a href="#" target="_blank" rel="noopener noreferrer" title="Follow us on Facebook"><i class="fab fa-facebook-f"></i></a> -->
-             </div>
-             <!-- **** END WHATSAPP ICON SECTION **** -->
-
-             <p>© <span id="current-year"></span> AI Quest Academy Pte Ltd. All Rights Reserved.</p>
-             <p>Venue: NTUC FairPrice Hub, 1 Joo Koon Circle, Singapore 629117</p>
+            <div class="footer-social">
+                 </div>
+            <p>© <span id="current-year">2025</span> AI Quest Academy Pte Ltd. All Rights Reserved.</p> <p>Venue: NTUC FairPrice Hub, 1 Joo Koon Circle, Singapore 629117</p>
         </div>
     </footer>
 
-    <!-- Link to your JavaScript -->
     <script src="script.js"></script>
-</body>
-</html>
-
-    <!-- Link to your JavaScript -->
-    <script src="script.js"></script>
-    <!-- Add relevant CSS from previous response -->
-    <style>
-        .accent-border-left { border-left: 5px solid var(--accent-neon); padding-left: 15px; margin-top: 40px; }
-        .secondary-border-left { border-left: 5px solid var(--secondary-accent); padding-left: 15px; margin-top: 40px; }
-        .age-group { margin-bottom: 40px; background: rgba(26, 26, 58, 0.4); padding: 25px; border-radius: 8px;}
-        .age-group-content { margin-top: 15px; }
-        .module-list { list-style: none; padding-left: 0; margin-top: 15px;}
-        .module-list li { margin-bottom: 15px; line-height: 1.5; } /* Increased spacing */
-        .module-list strong { color: var(--text-color); display: block; margin-bottom: 3px; } /* Highlight week title */
-        .intro-text { font-size: 1.1rem; max-width: 800px; margin: 10px auto 40px auto; text-align: center;}
-        .program-footer { margin-top: 50px; padding-top: 30px; border-top: 1px solid rgba(0, 255, 255, 0.2); }
-     </style>
+     <script>
+         document.getElementById('current-year').textContent = new Date().getFullYear();
+         // Basic mobile menu toggle (ensure this is also in script.js or common include)
+         const menuToggle = document.querySelector('.menu-toggle');
+         const navLinks = document.querySelector('.main-nav .nav-links');
+         if (menuToggle && navLinks) {
+             menuToggle.addEventListener('click', () => {
+                 navLinks.classList.toggle('active');
+                 const isExpanded = navLinks.classList.contains('active');
+                 menuToggle.setAttribute('aria-expanded', isExpanded);
+             });
+         }
+     </script>
 </body>
 </html>
