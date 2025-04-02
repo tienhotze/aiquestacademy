@@ -7,6 +7,7 @@
     --accent-neon: #00ffff; /* Neon cyan */
     --secondary-accent: #ff00ff; /* Neon magenta */
     --muted-color: #a0a0c0;
+    --whatsapp-green: #25D366; /* WhatsApp color */
 
     --font-heading: 'Orbitron', sans-serif;
     --font-body: 'Roboto', sans-serif;
@@ -160,6 +161,7 @@ section {
     justify-content: space-between;
     align-items: center;
     height: 100%;
+    position: relative; /* **** ADDED: Positioning context for WhatsApp icon **** */
 }
 
 .logo {
@@ -241,7 +243,27 @@ section {
     cursor: pointer;
 }
 
+/* --- **** START: HEADER WHATSAPP ICON STYLES **** --- */
+.whatsapp-header-icon {
+  position: absolute; /* Takes the icon out of the normal flow */
+  top: 50%;          /* Position halfway down the container */
+  right: 20px;         /* Distance from the right edge (adjust value as needed) */
+  transform: translateY(-50%); /* Vertically center it precisely */
+  font-size: 2rem;     /* Adjust size as needed (e.g., 1.8rem, 2.2rem) */
+  color: var(--whatsapp-green); /* Use WhatsApp green variable */
+  z-index: 100;        /* Ensure it stays above other header content */
+  transition: color 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
+}
+
+.whatsapp-header-icon:hover {
+  color: #1ebe5b; /* Slightly brighter green on hover */
+  transform: translateY(-50%) scale(1.1); /* Keep centering and scale up */
+}
+/* --- **** END: HEADER WHATSAPP ICON STYLES **** --- */
+
+
 /* --- Hero Section - Spaceship Theme --- */
+/* ... (rest of hero section styles) ... */
 .hero-section {
     height: calc(100vh - var(--header-height));
     display: flex;
@@ -298,6 +320,7 @@ section {
 }
 
 /* --- Overview Section --- */
+/* ... (rest of overview styles) ... */
 .overview-section {
     background-color: var(--secondary-bg);
     text-align: center;
@@ -334,6 +357,7 @@ section {
 }
 
 /* --- Location Highlight --- */
+/* ... (rest of location styles) ... */
 .location-highlight-section {
     background-color: var(--primary-bg);
 }
@@ -358,6 +382,7 @@ section {
 
 
 /* Styles for the new layout in Why Us section */
+/* ... (rest of Why Us styles) ... */
 .why-us-flex-row {
     display: flex;
     flex-wrap: wrap; /* Allow wrapping on smaller screens */
@@ -441,6 +466,7 @@ section {
 
 
 /* --- CTA Section --- */
+/* ... (rest of CTA styles) ... */
 .cta-section {
     background: linear-gradient(rgba(26, 26, 58, 0.8), rgba(10, 10, 26, 0.9)), url('images/placeholder-cta-bg.jpg') no-repeat center center/cover; /* Different BG */
     text-align: center;
@@ -477,19 +503,26 @@ section {
 .footer-links a:hover {
     color: var(--accent-neon);
 }
+/* --- Footer Social Icon Styling (Original - Kept for potential other icons) --- */
 .footer-social {
-    margin-bottom: 15px;
-}
-.footer-social a {
-    color: var(--muted-color);
-    font-size: 1.5rem;
-    margin: 0 8px;
-}
-.footer-social a:hover {
-     color: var(--secondary-accent);
+    margin-bottom: 15px; /* Existing margin */
+    line-height: 1; /* Prevent extra space around icon */
 }
 
+.footer-social a {
+    color: var(--muted-color); /* Default color */
+    font-size: 1.8rem; /* Make icon larger */
+    margin: 0 10px; /* Add space around the icon */
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-block; /* Needed for transform */
+}
+
+.footer-social a:hover {
+     color: #25D366; /* WhatsApp Green on hover - adjust if other icons are added */
+     transform: scale(1.1); /* Slightly enlarge on hover */
+}
 /* --- Contact Form Styling (Used on contact.html) --- */
+/* ... (rest of contact form styles) ... */
 .contact-section {
     padding: 60px 0;
 }
@@ -550,7 +583,7 @@ section {
 .privacy-notice small { font-size: 0.85rem; color: var(--muted-color); display: block; margin-top: -10px; }
 
 /* --- Other Page Specific Styles (Add styles for program, schedule, etc. here or keep in HTML) --- */
-/* Styles for .page-header-section, .age-group, .schedule-table, .fee-box, .location-grid, .feature-block, .faq-item etc. should be placed here */
+/* ... (rest of page specific styles) ... */
 /* Example: */
 .page-header-section {
     background-size: cover;
@@ -580,6 +613,11 @@ section {
      /* Adjust nav link size for medium screens if needed */
      /* .main-nav .nav-links a { font-size: 0.7rem; } */
      /* .main-nav .nav-links .btn { font-size: 0.7rem; } */
+
+    /* **** ADDED: Adjust WhatsApp icon position on medium screens if necessary **** */
+    /* .whatsapp-header-icon {
+        right: 15px;
+    } */
 }
 
 @media (max-width: 768px) {
@@ -590,6 +628,11 @@ section {
     .menu-toggle {
         display: block; /* Show hamburger */
         z-index: 1001; /* Above nav links */
+        /* **** ADDED: Ensure menu toggle is positioned correctly **** */
+        position: absolute; /* Or relative depending on layout */
+        right: 15px; /* Align with container padding */
+        top: 50%;
+        transform: translateY(-50%);
     }
     .main-nav .nav-links {
         display: none; /* Hide links by default */
@@ -634,28 +677,13 @@ section {
         text-align: center;
     }
     .feature-icon { margin-bottom: 15px; }
-}
 
-/* --- Footer Social Icon Styling --- */
-.footer-social {
-    margin-bottom: 15px; /* Existing margin */
-    line-height: 1; /* Prevent extra space around icon */
+    /* --- **** START: WHATSAPP ICON MOBILE ADJUSTMENT **** --- */
+    .whatsapp-header-icon {
+        right: 60px; /* Move it left to avoid overlapping the menu toggle */
+                     /* Adjust this value based on your menu toggle size/position */
+        font-size: 1.8rem; /* Slightly smaller on mobile */
+        /* If header height changes significantly, you might need to adjust top/transform */
+    }
+    /* --- **** END: WHATSAPP ICON MOBILE ADJUSTMENT **** --- */
 }
-
-.footer-social a {
-    color: var(--muted-color); /* Default color */
-    font-size: 1.8rem; /* Make icon larger */
-    margin: 0 10px; /* Add space around the icon */
-    transition: color 0.3s ease, transform 0.3s ease;
-    display: inline-block; /* Needed for transform */
-}
-
-.footer-social a:hover {
-     color: #25D366; /* WhatsApp Green on hover */
-     transform: scale(1.1); /* Slightly enlarge on hover */
-}
-
-/* Optional: Style specific icons if needed */
-/* .footer-social a i.fa-whatsapp { */
-     /* Specific styles for WhatsApp if default isn't desired */
-/* } */
