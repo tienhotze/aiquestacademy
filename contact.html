@@ -3,23 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- **** UPDATE TITLE **** -->
     <title>Register / Contact | AI Quest Academy Singapore</title>
-     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome (for icons - optional but useful) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Link to your CSS -->
     <link rel="stylesheet" href="style.css">
+     <style>
+        /* Styles specific to contact.html layout */
+        .contact-flex { display: grid; grid-template-columns: 1fr; gap: 50px; }
+         @media (min-width: 992px) {
+              .contact-flex { grid-template-columns: 2fr 1fr; } /* Form takes more space */
+         }
+
+        .contact-form-container h2, .contact-info-container h2 { margin-bottom: 10px; }
+        .contact-form-container p, .contact-info-container p { margin-bottom: 30px; color: var(--muted-color); }
+
+        /* Form styles likely already in style.css, but include basics here for clarity */
+        #register-form { background-color: var(--secondary-bg); padding: 30px 40px; border-radius: 8px; border: 1px solid rgba(0, 255, 255, 0.2); }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-family: var(--font-heading); color: var(--text-color); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+        .form-group input[type="text"], .form-group input[type="email"], .form-group input[type="tel"], .form-group input[type="number"], .form-group select, .form-group textarea { width: 100%; padding: 12px 15px; background-color: rgba(10, 10, 26, 0.8); border: 1px solid rgba(0, 255, 255, 0.3); border-radius: 4px; color: var(--text-color); font-family: var(--font-body); font-size: 1rem; }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--accent-neon); box-shadow: 0 0 10px rgba(0, 255, 255, 0.4); }
+        .form-group textarea { min-height: 120px; resize: vertical; }
+        .form-group button[type="submit"] { width: 100%; padding: 15px; margin-top: 10px; }
+
+        .required { color: var(--secondary-accent); }
+        .privacy-notice small { font-size: 0.85rem; color: var(--muted-color); display: block; margin-top: -10px; }
+
+        .contact-info-container { background-color: rgba(26, 26, 58, 0.4); padding: 30px; border-radius: 8px; border: 1px solid rgba(255, 0, 255, 0.2); }
+        .contact-details { list-style: none; padding: 0; margin-top: 20px; }
+        .contact-details li { display: flex; align-items: flex-start; /* Align icon top */ gap: 15px; margin-bottom: 20px; font-size: 1.05rem; }
+        .contact-details i { color: var(--secondary-accent); font-size: 1.3rem; margin-top: 3px; width: 20px; text-align: center;}
+        .contact-details a { color: var(--accent-neon); }
+        .contact-details a:hover { color: var(--secondary-accent); }
+        .contact-details strong { color: var(--text-color); display: block; margin-bottom: 3px; }
+        .contact-map-link { margin-top: 30px; text-align: center; }
+        @media (min-width: 992px) {
+              .contact-map-link { text-align: left; }
+        }
+
+         /* Style for page header (already likely in style.css but kept here for clarity) */
+         .page-header-section {
+             background-size: cover;
+             background-position: center center;
+             min-height: 30vh;
+             display: flex;
+             align-items: center;
+             text-align: center;
+             color: #fff;
+             padding: 40px 20px;
+         }
+         .page-header-section h1 {
+             text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+         }
+     </style>
 </head>
 <body>
     <header class="site-header">
         <div class="container header-container">
-             <!-- **** UPDATE LOGO TEXT **** -->
             <a href="index.html" class="logo">AI Quest Academy</a>
-            <nav class="main-nav">
+             <nav class="main-nav">
                  <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
                      <i class="fas fa-bars"></i>
                  </button>
@@ -30,16 +74,15 @@
                      <li><a href="location.html">Location</a></li>
                      <li><a href="why-us.html">Why Us?</a></li>
                      <li><a href="faq.html">FAQ</a></li>
-                     <li><a href="contact.html" class="btn btn-primary">Register Now</a></li>
-                 </ul>
-             </nav>
-        </div>
-    </header>
+                     <li><a href="contact.html" class="btn btn-primary active">Register Now</a></li> </ul>
+             </nav> <a href="https://wa.me/6596734436" target="_blank" rel="noopener noreferrer" title="Chat with us on WhatsApp" class="whatsapp-header-icon">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            </div> </header>
 
 <main>
-    <section class="page-header-section" style="background: linear-gradient(rgba(10, 10, 26, 0.8), rgba(10, 10, 26, 0.9)), url('images/placeholder-contact-header.jpg') no-repeat center center/cover; min-height: 30vh; display: flex; align-items: center;">
+    <section class="page-header-section" style="background: linear-gradient(rgba(10, 10, 26, 0.8), rgba(10, 10, 26, 0.9)), url('images/placeholder-contact-header.jpg') no-repeat center center/cover;">
         <div class="container text-center">
-             <!-- **** UPDATE HEADER **** -->
             <h1>Register for the AI Quest!</h1>
             <p>Secure your spot for our 4-week introductory course starting May 2025. Early Bird ends April 20th!</p>
         </div>
@@ -48,14 +91,10 @@
     <section class="contact-section">
         <div class="container">
             <div class="contact-flex">
-                <!-- Form Section -->
                 <div class="contact-form-container">
-                     <!-- **** UPDATE HEADING/TEXT **** -->
                     <h2>Register Interest / Ask a Question</h2>
                     <p>Fill out this form to register for the May 2025 intake or ask questions. We'll reply soon!</p>
-                    <!-- **** REMEMBER to set the form action endpoint **** -->
-                    <form id="register-form" method="POST" action="/thank-you" netlify>
-                        <div class="form-group">
+                    <form id="register-form" method="POST" action="/thank-you.html" netlify> <div class="form-group">
                             <label for="parent-name">Parent's Name <span class="required">*</span></label>
                             <input type="text" id="parent-name" name="parent_name" required>
                         </div>
@@ -72,12 +111,10 @@
                             <input type="text" id="child-name" name="child_name" required>
                         </div>
                          <div class="form-group">
-                             <!-- **** UPDATE LABEL **** -->
                             <label for="child-age">Child's Age (10-17) <span class="required">*</span></label>
                             <input type="number" id="child-age" name="child_age" min="10" max="17" required placeholder="Enter age between 10 and 17">
                         </div>
                          <div class="form-group">
-                             <!-- **** UPDATE LABEL & OPTIONS **** -->
                             <label for="age-group">Select Age Group/Course <span class="required">*</span></label>
                             <select id="age-group" name="age_group" required>
                                 <option value="" disabled selected>-- Select Age Group --</option>
@@ -85,25 +122,12 @@
                                 <option value="14-17">14-17 Years (Pioneers - Intro)</option>
                             </select>
                         </div>
-                        <!-- Optional: Add preferred schedule slot if multiple options exist -->
-                        <!--
-                         <div class="form-group">
-                            <label for="schedule-pref">Preferred Schedule Slot (See Schedule Page)</label>
-                            <select id="schedule-pref" name="schedule_preference">
-                                <option value="" disabled selected>-- Optional: Select Preferred Slot --</option>
-                                <option value="Wed 4:30PM (10-13)">Wed 4:30PM (10-13)</option>
-                                <option value="Thu 5:00PM (14-17)">Thu 5:00PM (14-17)</option>
-                                <option value="Sat 10:00AM (10-13)">Sat 10:00AM (10-13)</option>
-                                <option value="Sat 1:00PM (14-17)">Sat 1:00PM (14-17)</option>
-                            </select>
-                         </div>
-                         -->
-                         <div class="form-group">
-                             <label for="laptop-preference">Laptop Preference</label>
-                             <select id="laptop-preference" name="laptop_preference">
-                                 <option value="Bring Own">Will Bring Own Laptop</option>
-                                 <option value="Share Provided">Prefer to Share Provided Laptop</option>
-                             </select>
+                        <div class="form-group">
+                              <label for="laptop-preference">Laptop Preference</label>
+                              <select id="laptop-preference" name="laptop_preference">
+                                   <option value="Bring Own">Will Bring Own Laptop</option>
+                                   <option value="Share Provided">Prefer to Share Provided Laptop</option>
+                              </select>
                          </div>
                         <div class="form-group">
                             <label for="referral">How Did You Hear About Us? (Optional)</label>
@@ -114,17 +138,14 @@
                             <textarea id="message" name="message" rows="4"></textarea>
                         </div>
                         <div class="form-group privacy-notice">
-                             <small>By submitting this form, you agree to our Privacy Policy. <span class="required">*</span> Required fields.</small>
-                             <!-- Add link to Privacy Policy page later -->
-                         </div>
+                             <small>By submitting this form, you agree to our Privacy Policy (link to be added). <span class="required">*</span> Required fields.</small>
+                        </div>
                         <div class="form-group">
-                            <!-- **** UPDATE BUTTON TEXT **** -->
                             <button type="submit" class="btn btn-accent btn-large">Register / Send Message</button>
                         </div>
                     </form>
                 </div>
 
-                <!-- Contact Info Section -->
                 <div class="contact-info-container">
                     <h2>Contact Information</h2>
                     <p>Prefer to reach out directly?</p>
@@ -142,16 +163,14 @@
                             <i class="fas fa-envelope icon-secondary"></i>
                              <div>
                                 <strong>Email:</strong><br>
-                                 <!-- **** UPDATE EMAIL **** -->
                                 <a href="mailto:info@aiquestacademy.com.sg">info@aiquestacademy.com.sg</a>
                             </div>
                         </li>
                         <li>
                             <i class="fas fa-phone icon-secondary"></i>
                              <div>
-                                <strong>Phone:</strong><br>
-                                 <!-- **** UPDATE PHONE **** -->
-                                <a href="tel:+6596734436">+65 9673 34436</a> <!-- Replace with your phone -->
+                                <strong>Phone / WhatsApp:</strong><br>
+                                <a href="tel:+6596734436">+65 9673 4436</a>
                             </div>
                         </li>
                          <li>
@@ -179,55 +198,27 @@
                  <a href="location.html">Location</a> |
                  <a href="faq.html">FAQ</a> |
                  <a href="contact.html">Contact</a>
-             </div>
+            </div>
 
-             <!-- **** WHATSAPP ICON ADDED HERE **** -->
-             <div class="footer-social">
-                 <a href="https://wa.me/6596734436" target="_blank" rel="noopener noreferrer" title="Chat with us on WhatsApp">
-                     <i class="fab fa-whatsapp"></i> <!-- Font Awesome WhatsApp Icon -->
-                 </a>
-                 <!-- Add other social icons here if needed later -->
-                 <!-- Example: <a href="#" target="_blank" rel="noopener noreferrer" title="Follow us on Facebook"><i class="fab fa-facebook-f"></i></a> -->
-             </div>
-             <!-- **** END WHATSAPP ICON SECTION **** -->
-
-             <p>© <span id="current-year"></span> AI Quest Academy Pte Ltd. All Rights Reserved.</p>
-             <p>Venue: NTUC FairPrice Hub, 1 Joo Koon Circle, Singapore 629117</p>
+            <div class="footer-social">
+                 </div>
+            <p>© <span id="current-year">2025</span> AI Quest Academy Pte Ltd. All Rights Reserved.</p> <p>Venue: NTUC FairPrice Hub, 1 Joo Koon Circle, Singapore 629117</p>
         </div>
     </footer>
 
-    <!-- Link to your JavaScript -->
     <script src="script.js"></script>
-</body>
-</html>
-
-    <!-- Link to your JavaScript -->
-    <script src="script.js"></script>
-    <!-- Add relevant CSS from previous response -->
-     <style>
-        .contact-flex { display: grid; grid-template-columns: 1fr; gap: 50px; }
-         @media (min-width: 992px) {
-             .contact-flex { grid-template-columns: 2fr 1fr; } /* Form takes more space */
+     <script>
+         document.getElementById('current-year').textContent = new Date().getFullYear();
+         // Basic mobile menu toggle (ensure this is also in script.js or common include)
+         const menuToggle = document.querySelector('.menu-toggle');
+         const navLinks = document.querySelector('.main-nav .nav-links');
+         if (menuToggle && navLinks) {
+             menuToggle.addEventListener('click', () => {
+                 navLinks.classList.toggle('active');
+                 const isExpanded = navLinks.classList.contains('active');
+                 menuToggle.setAttribute('aria-expanded', isExpanded);
+             });
          }
-
-        .contact-form-container h2, .contact-info-container h2 { margin-bottom: 10px; }
-        .contact-form-container p, .contact-info-container p { margin-bottom: 30px; color: var(--muted-color); }
-
-        /* Form styles already added in previous CSS snippet */
-        .required { color: var(--secondary-accent); }
-        .privacy-notice small { font-size: 0.85rem; color: var(--muted-color); display: block; margin-top: -10px; }
-
-        .contact-info-container { background-color: rgba(26, 26, 58, 0.4); padding: 30px; border-radius: 8px; border: 1px solid rgba(255, 0, 255, 0.2); }
-        .contact-details { list-style: none; padding: 0; margin-top: 20px; }
-        .contact-details li { display: flex; align-items: flex-start; /* Align icon top */ gap: 15px; margin-bottom: 20px; font-size: 1.05rem; }
-        .contact-details i { color: var(--secondary-accent); font-size: 1.3rem; margin-top: 3px; width: 20px; text-align: center;}
-        .contact-details a { color: var(--accent-neon); }
-        .contact-details a:hover { color: var(--secondary-accent); }
-        .contact-details strong { color: var(--text-color); display: block; margin-bottom: 3px; }
-        .contact-map-link { margin-top: 30px; text-align: center; }
-        @media (min-width: 992px) {
-             .contact-map-link { text-align: left; }
-        }
-    </style>
+     </script>
 </body>
 </html>
