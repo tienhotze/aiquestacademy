@@ -140,19 +140,14 @@ section {
 
 /* --- Header Enhancements --- */
 .site-header {
-    /* Darker, slightly metallic gradient background */
     background: linear-gradient(to bottom, #101528, #0a0d1a);
     position: sticky;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
-    height: var(--header-height); /* Keep height consistent */
-    /* Optional subtle texture overlay */
-    /* background-image: linear-gradient(to bottom, #101528, #0a0d1a), url('images/noise-texture.png'); */
-    /* Subtle bottom border like a panel line */
+    height: var(--header-height);
     border-bottom: 2px solid var(--accent-neon);
-    /* Glow effect for the border */
     box-shadow: 0 2px 15px -2px rgba(0, 255, 255, 0.5);
 }
 
@@ -161,32 +156,36 @@ section {
     justify-content: space-between;
     align-items: center;
     height: 100%;
-    position: relative; /* **** ADDED: Positioning context for WhatsApp icon **** */
+    position: relative; /* **** Positioning context for WhatsApp icon **** */
 }
 
 .logo {
     font-family: var(--font-heading);
-    font-size: 1.8rem; /* Keep logo size */
+    font-size: 1.8rem;
     font-weight: bold;
     color: var(--heading-color);
     text-decoration: none;
-    /* Add a subtle glow to the logo */
     text-shadow: 0 0 8px rgba(255, 255, 255, 0.7), 0 0 15px var(--accent-neon);
     transition: text-shadow 0.3s ease;
+    flex-shrink: 0; /* Prevent logo from shrinking */
 }
 .logo:hover {
-    color: var(--heading-color); /* Keep color on hover */
+    color: var(--heading-color);
     text-shadow: 0 0 12px rgba(255, 255, 255, 0.9), 0 0 25px var(--accent-neon);
 }
 
 
 /* --- Navigation Menu Adjustments --- */
+.main-nav {
+    /* Allow nav to take up space but not push icon off */
+    margin-right: 5px; /* Add some space before potential icon */
+}
 .main-nav .nav-links {
     display: flex;
     align-items: center;
 }
 .main-nav .nav-links li {
-    margin-left: 15px; /* Reduced spacing */
+    margin-left: 15px; /* Spacing between links */
 }
 
 .main-nav .nav-links a {
@@ -194,88 +193,93 @@ section {
     padding: 5px 0;
     position: relative;
     text-transform: uppercase;
-    /* **** REDUCED FONT SIZE **** */
-    font-size: 0.75rem; /* Smaller font size to prevent wrapping */
-    letter-spacing: 0.8px; /* Add slight letter spacing */
-    font-weight: bold; /* Make it slightly bolder */
-    white-space: nowrap; /* Prevent wrapping explicitly */
+    font-size: 0.75rem;
+    letter-spacing: 0.8px;
+    font-weight: bold;
+    white-space: nowrap;
     transition: color 0.3s ease, text-shadow 0.3s ease;
 }
-
-/* Enhanced Hover/Active Effect */
+/* Underline effect */
 .main-nav .nav-links a::after {
     content: '';
     position: absolute;
-    bottom: -5px; /* Move underline slightly down */
+    bottom: -5px;
     left: 0;
     width: 0;
     height: 2px;
     background-color: var(--accent-neon);
     transition: width 0.3s ease;
-    /* Add a glow to the underline */
     box-shadow: 0 0 8px var(--accent-neon);
 }
 .main-nav .nav-links a:hover::after,
-.main-nav .nav-links a.active::after {
+.main-nav .nav-links a.active::after { /* Style for active page link */
     width: 100%;
 }
-.main-nav .nav-links a:hover {
-    color: var(--accent-neon); /* Brighten text on hover */
-    text-shadow: 0 0 5px var(--accent-neon); /* Add text glow on hover */
+.main-nav .nav-links a:hover,
+.main-nav .nav-links a.active {
+    color: var(--accent-neon);
+    text-shadow: 0 0 5px var(--accent-neon);
 }
 
 /* Adjust "Register Now" Button in Nav */
 .main-nav .nav-links .btn {
-    margin-left: 20px; /* Ensure enough space */
-    padding: 6px 12px; /* Slightly smaller padding */
-    font-size: 0.75rem; /* Match link font size */
-    border-width: 1.5px; /* Slightly thinner border */
+    margin-left: 20px; /* Space before button */
+    padding: 6px 12px;
+    font-size: 0.75rem;
+    border-width: 1.5px;
     letter-spacing: 0.8px;
-    white-space: nowrap; /* Prevent wrapping */
+    white-space: nowrap;
 }
 
 .menu-toggle { /* Mobile Menu Button */
-    display: none; /* Hidden by default */
+    display: none;
     background: none;
     border: none;
     color: var(--heading-color);
     font-size: 1.8rem;
     cursor: pointer;
+    padding: 5px; /* Add padding for easier tapping */
 }
 
 /* --- **** START: HEADER WHATSAPP ICON STYLES **** --- */
 .whatsapp-header-icon {
-  position: absolute; /* Takes the icon out of the normal flow */
-  top: 50%;          /* Position halfway down the container */
-  right: 20px;         /* Distance from the right edge (adjust value as needed) */
-  transform: translateY(-50%); /* Vertically center it precisely */
-  font-size: 2rem;     /* Adjust size as needed (e.g., 1.8rem, 2.2rem) */
-  color: var(--whatsapp-green); /* Use WhatsApp green variable */
-  z-index: 100;        /* Ensure it stays above other header content */
-  transition: color 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
+  position: absolute;
+  top: 50%;
+  /* **** ADJUST THIS VALUE as needed **** */
+  right: 20px; /* Start closer to edge, adjust if still overlapping */
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: var(--whatsapp-green);
+  z-index: 100;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
+/* Add margin to the nav container to push it away from the icon */
+.main-nav {
+    margin-right: 60px; /* Approx icon size + desired space */
+}
+
+
 .whatsapp-header-icon:hover {
-  color: #1ebe5b; /* Slightly brighter green on hover */
-  transform: translateY(-50%) scale(1.1); /* Keep centering and scale up */
+  color: #1ebe5b;
+  transform: translateY(-50%) scale(1.1);
 }
 /* --- **** END: HEADER WHATSAPP ICON STYLES **** --- */
 
 
 /* --- Hero Section - Spaceship Theme --- */
-/* ... (rest of hero section styles) ... */
 .hero-section {
-    height: calc(100vh - var(--header-height));
+    min-height: calc(90vh - var(--header-height)); /* Use min-height */
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    /* **** REPLACE Background with Space Theme **** */
-    background: url('images/space-background.jpg') no-repeat center center/cover; /* <<-- GET A HIGH-RES SPACE IMAGE */
+    background: url('images/space-background.jpg') no-repeat center center/cover;
     position: relative;
     overflow: hidden;
-    border-bottom: 3px solid var(--accent-neon); /* Thicker border below hero */
+    border-bottom: 3px solid var(--accent-neon);
     box-shadow: 0 5px 20px -3px rgba(0, 255, 255, 0.4);
+    padding: 40px 0; /* Add padding for content */
 }
 
 /* HUD Overlay Effect using pseudo-elements */
@@ -286,54 +290,60 @@ section {
     left: 15px;
     right: 15px;
     bottom: 15px;
-    /* Thin border lines like a viewscreen */
-    border: 1.5px solid rgba(0, 255, 255, 0.4); /* Accent color, semi-transparent */
-    pointer-events: none; /* Allows clicking through */
+    border: 1.5px solid rgba(0, 255, 255, 0.4);
+    pointer-events: none;
     z-index: 1;
-    opacity: 0.7; /* Make it slightly subtle */
-    border-radius: 3px; /* Slight rounding */
+    opacity: 0.7;
+    border-radius: 3px;
 }
 
 .hero-content {
-    position: relative; /* Ensure content is above pseudo-elements */
+    position: relative;
     z-index: 2;
-    /* Add a subtle background to content for readability */
-    background-color: rgba(10, 13, 26, 0.65); /* Semi-transparent dark blue */
+    background-color: rgba(10, 13, 26, 0.75); /* Slightly more opaque */
     padding: 30px 40px;
     border-radius: 5px;
-    /* Optional: Add border similar to HUD */
     border: 1px solid rgba(0, 255, 255, 0.3);
     box-shadow: 0 0 25px rgba(10, 13, 26, 0.5);
+    max-width: 800px; /* Limit width */
+    margin: 0 auto; /* Center */
 }
 
 .hero-content h1 {
-    font-size: 3.2rem; /* Adjust if needed */
-    margin-bottom: 1rem;
-    /* Enhance glow */
+    font-size: clamp(2rem, 5vw, 3.2rem); /* Responsive font size */
+    /* **** INCREASED MARGIN BOTTOM **** */
+    margin-bottom: 1.5rem; /* Spacing below heading */
     text-shadow: 0 0 10px var(--accent-neon), 0 0 20px var(--accent-neon), 0 0 5px #fff;
 }
 .hero-content p {
-    font-size: 1.1rem; /* Adjust if needed */
+    font-size: clamp(1rem, 2.5vw, 1.1rem); /* Responsive font size */
     max-width: 700px;
-    margin: 0 auto 2rem auto;
+    margin: 0 auto 2rem auto; /* Spacing below paragraph */
     color: var(--text-color);
+}
+/* Container for buttons for spacing */
+.hero-buttons {
+    margin-top: 1rem; /* Space above buttons */
+}
+/* Ensure buttons wrap nicely */
+.hero-buttons .btn {
+    margin: 8px;
 }
 
 /* --- Overview Section --- */
-/* ... (rest of overview styles) ... */
 .overview-section {
     background-color: var(--secondary-bg);
     text-align: center;
 }
 .overview-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Adjust minmax */
     gap: 30px;
     margin-top: 40px;
     margin-bottom: 40px;
 }
 .overview-item {
-    background-color: rgba(10, 10, 26, 0.6); /* Slightly darker boxes */
+    background-color: rgba(10, 10, 26, 0.6);
     padding: 30px 20px;
     border-radius: 8px;
     border: 1px solid rgba(0, 255, 255, 0.2);
@@ -357,7 +367,6 @@ section {
 }
 
 /* --- Location Highlight --- */
-/* ... (rest of location styles) ... */
 .location-highlight-section {
     background-color: var(--primary-bg);
 }
@@ -365,112 +374,41 @@ section {
     display: flex;
     align-items: center;
     gap: 40px;
+    flex-wrap: wrap; /* Allow wrapping */
 }
 .location-text {
-    flex: 1;
+    flex: 1 1 500px; /* Allow text to take more space */
 }
 .location-image {
-    flex: 1;
+    flex: 1 1 400px; /* Image container */
     border-radius: 8px;
     overflow: hidden;
     border: 2px solid var(--secondary-accent);
     box-shadow: 0 0 15px rgba(255, 0, 255, 0.3);
+    min-width: 300px; /* Prevent image getting too small */
 }
 .location-image img {
     border-radius: 6px; /* Inner radius */
+    width: 100%; /* Ensure image fills container */
 }
 
 
 /* Styles for the new layout in Why Us section */
-/* ... (rest of Why Us styles) ... */
-.why-us-flex-row {
-    display: flex;
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
-    align-items: center;
-    gap: 40px;
-    margin-bottom: 40px;
-    background-color: rgba(10, 10, 26, 0.4); /* Optional background */
-    padding: 20px; /* Optional padding */
-    border-radius: 8px; /* Optional rounding */
-}
-
-.why-us-image-container {
-    flex: 1 1 400px; /* Allows image container to grow/shrink, base width 400px */
-    max-width: 500px; /* Max width for the image */
-    margin: 0 auto; /* Center image container if it wraps */
-}
-
-.why-us-feature-image {
-    border-radius: 8px; /* Rounded corners for the image */
-    border: 1px solid var(--secondary-accent); /* Optional border */
-    box-shadow: 0 0 10px rgba(255, 0, 255, 0.3); /* Optional glow */
-}
-
-.why-us-feature-text {
-    flex: 1 1 300px; /* Allows text container to grow/shrink */
-}
-.why-us-feature-text i { /* Style icon if needed */
-     font-size: 2.5rem;
-     margin-bottom: 15px;
-     display: block; /* Make icon block for centering */
-     text-align: center; /* Center icon */
- }
-@media (min-width: 768px) {
-    .why-us-feature-text i {
-        text-align: left; /* Align left on larger screens */
-    }
-}
-
-
-.why-us-grid-condensed {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    margin-top: 40px; /* Space between image row and grid */
-}
-/* Keep existing .why-us-item styles */
-
-/* --- Why Us Intro Section --- */
-.why-us-intro-section {
-     background-color: var(--secondary-bg);
-     text-align: center;
-}
-.why-us-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-    margin-bottom: 40px;
-}
-.why-us-item {
-    /* Similar styling to overview-item but maybe use secondary accent */
-    background-color: rgba(10, 10, 26, 0.6);
-    padding: 30px 20px;
-    border-radius: 8px;
-    border: 1px solid rgba(255, 0, 255, 0.2);
-     transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.why-us-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 20px rgba(255, 0, 255, 0.3);
-}
-.why-us-item i {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
-}
-.why-us-item h3 {
-    font-size: 1.3rem;
-    margin-bottom: 10px;
-    color: var(--secondary-accent);
-}
-
+/* ... (Keep relevant styles from previous CSS if using these elements) ... */
+.feature-block-with-image {display: flex;flex-wrap: wrap;align-items: center;gap: 40px;margin-bottom: 50px;background-color: rgba(10, 10, 26, 0.4);padding: 30px;border-radius: 8px;border: 1px solid rgba(0, 255, 255, 0.2);}
+.feature-block-with-image.reverse {flex-direction: row-reverse;background-color: rgba(26, 26, 58, 0.3);border: 1px solid rgba(255, 0, 255, 0.2);}
+.feature-image-container {flex: 1 1 400px;max-width: 500px;margin: 0 auto;}
+.feature-image {border-radius: 8px;display: block;width: 100%;height: auto;}
+.feature-text-content {flex: 1 1 300px;}
+.feature-text-content h2 {margin-top: 0;margin-bottom: 15px;}
+.feature-text-content p {font-size: 1.05rem;color: var(--text-color);}
 
 /* --- CTA Section --- */
-/* ... (rest of CTA styles) ... */
 .cta-section {
-    background: linear-gradient(rgba(26, 26, 58, 0.8), rgba(10, 10, 26, 0.9)), url('images/placeholder-cta-bg.jpg') no-repeat center center/cover; /* Different BG */
+    background: linear-gradient(rgba(26, 26, 58, 0.8), rgba(10, 10, 26, 0.9)), url('images/placeholder-cta-bg.jpg') no-repeat center center/cover;
     text-align: center;
     color: #fff;
+    padding: 60px 20px; /* Ensure padding */
 }
 .cta-section h2 {
     text-shadow: 0 0 10px var(--secondary-accent);
@@ -480,11 +418,13 @@ section {
     max-width: 600px;
     margin: 0 auto 30px auto;
 }
-
+.cta-section .btn {
+    margin: 10px; /* Spacing for buttons */
+}
 
 /* --- Footer --- */
 .site-footer {
-    background-color: #050510; /* Even darker footer */
+    background-color: #050510;
     color: var(--muted-color);
     padding: 30px 0;
     text-align: center;
@@ -499,137 +439,78 @@ section {
 .footer-links a {
     color: var(--muted-color);
     margin: 0 10px;
+    display: inline-block; /* Prevent wrapping issues */
+    padding: 5px 0;
 }
 .footer-links a:hover {
     color: var(--accent-neon);
 }
-/* --- Footer Social Icon Styling (Original - Kept for potential other icons) --- */
+/* Footer Social section - kept for potential future icons */
 .footer-social {
-    margin-bottom: 15px; /* Existing margin */
-    line-height: 1; /* Prevent extra space around icon */
+    margin-bottom: 15px;
+    line-height: 1;
 }
-
 .footer-social a {
-    color: var(--muted-color); /* Default color */
-    font-size: 1.8rem; /* Make icon larger */
-    margin: 0 10px; /* Add space around the icon */
+    color: var(--muted-color);
+    font-size: 1.8rem;
+    margin: 0 10px;
     transition: color 0.3s ease, transform 0.3s ease;
-    display: inline-block; /* Needed for transform */
+    display: inline-block;
+}
+.footer-social a:hover {
+    color: #25D366; /* Default hover for potential icons */
+    transform: scale(1.1);
 }
 
-.footer-social a:hover {
-     color: #25D366; /* WhatsApp Green on hover - adjust if other icons are added */
-     transform: scale(1.1); /* Slightly enlarge on hover */
-}
 /* --- Contact Form Styling (Used on contact.html) --- */
-/* ... (rest of contact form styles) ... */
-.contact-section {
-    padding: 60px 0;
-}
-#register-form {
-    max-width: 700px;
-    margin: 40px auto 0 auto;
-    background-color: var(--secondary-bg);
-    padding: 30px 40px;
-    border-radius: 8px;
-    border: 1px solid rgba(0, 255, 255, 0.2);
-}
-.form-group {
-    margin-bottom: 20px;
-}
-.form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-family: var(--font-heading);
-    color: var(--text-color);
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-.form-group input[type="text"],
-.form-group input[type="email"],
-.form-group input[type="tel"],
-.form-group input[type="number"], /* Added number type */
-.form-group select,
-.form-group textarea {
-    width: 100%;
-    padding: 12px 15px;
-    background-color: rgba(10, 10, 26, 0.8);
-    border: 1px solid rgba(0, 255, 255, 0.3);
-    border-radius: 4px;
-    color: var(--text-color);
-    font-family: var(--font-body);
-    font-size: 1rem;
-}
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--accent-neon);
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
-}
-.form-group textarea {
-    min-height: 120px;
-    resize: vertical;
-}
-.form-group button[type="submit"] {
-    /* Use button styles defined earlier */
-    width: 100%;
-    padding: 15px; /* Larger submit button */
-    margin-top: 10px;
-}
-/* Form specific styles used on contact.html */
+/* ... (Keep contact form styles if needed) ... */
+.contact-section {padding: 60px 0;}
+#register-form {max-width: 700px;margin: 40px auto 0 auto;background-color: var(--secondary-bg);padding: 30px 40px;border-radius: 8px;border: 1px solid rgba(0, 255, 255, 0.2);}
+.form-group {margin-bottom: 20px;}
+.form-group label {display: block;margin-bottom: 8px;font-family: var(--font-heading);color: var(--text-color);font-size: 0.9rem;text-transform: uppercase;letter-spacing: 0.5px;}
+.form-group input[type="text"], .form-group input[type="email"], .form-group input[type="tel"], .form-group input[type="number"], .form-group select, .form-group textarea {width: 100%;padding: 12px 15px;background-color: rgba(10, 10, 26, 0.8);border: 1px solid rgba(0, 255, 255, 0.3);border-radius: 4px;color: var(--text-color);font-family: var(--font-body);font-size: 1rem;}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {outline: none;border-color: var(--accent-neon);box-shadow: 0 0 10px rgba(0, 255, 255, 0.4);}
+.form-group textarea {min-height: 120px;resize: vertical;}
+.form-group button[type="submit"] {width: 100%;padding: 15px;margin-top: 10px;}
 .required { color: var(--secondary-accent); }
 .privacy-notice small { font-size: 0.85rem; color: var(--muted-color); display: block; margin-top: -10px; }
 
 /* --- Other Page Specific Styles (Add styles for program, schedule, etc. here or keep in HTML) --- */
-/* ... (rest of page specific styles) ... */
-/* Example: */
-.page-header-section {
-    background-size: cover;
-    background-position: center center;
-    min-height: 30vh;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: #fff;
-}
-.page-header-section h1 {
-    text-shadow: 0 2px 5px rgba(0,0,0,0.5);
-}
+.page-header-section {background-size: cover;background-position: center center;min-height: 30vh;display: flex;align-items: center;justify-content: center;text-align: center;color: #fff;padding: 40px 20px;}
+.page-header-section h1 {text-shadow: 0 2px 5px rgba(0,0,0,0.5);}
 
 
 /* --- Responsive Design --- */
 @media (max-width: 992px) {
     .container {
-        max-width: 90%;
+        /* Use padding instead of max-width % for better control */
+        padding-left: 30px;
+        padding-right: 30px;
     }
     .location-flex {
-        flex-direction: column;
+        /* Stack earlier if needed */
     }
-    .location-image {
-        margin-top: 30px;
+     /* Adjust main nav margin for WhatsApp icon */
+    .main-nav {
+        margin-right: 55px; /* Adjust space for icon */
     }
-     /* Adjust nav link size for medium screens if needed */
-     /* .main-nav .nav-links a { font-size: 0.7rem; } */
-     /* .main-nav .nav-links .btn { font-size: 0.7rem; } */
+    .whatsapp-header-icon {
+        right: 15px; /* Closer to edge on tablet */
+        font-size: 1.9rem;
+    }
 
-    /* **** ADDED: Adjust WhatsApp icon position on medium screens if necessary **** */
-    /* .whatsapp-header-icon {
-        right: 15px;
-    } */
 }
 
 @media (max-width: 768px) {
-    h1 { font-size: 2.2rem; }
+    h1 { font-size: 2rem; } /* Adjust base H1 */
     h2 { font-size: 1.8rem; }
-    .hero-content h1 { font-size: 2.5rem; }
+    .hero-content h1 { font-size: clamp(2rem, 6vw, 2.5rem); } /* Adjust hero H1 */
+    .hero-content p { font-size: clamp(0.9rem, 2.5vw, 1rem); }
 
     .menu-toggle {
-        display: block; /* Show hamburger */
+        display: block;
         z-index: 1001; /* Above nav links */
-        /* **** ADDED: Ensure menu toggle is positioned correctly **** */
-        position: absolute; /* Or relative depending on layout */
+        position: absolute;
         right: 15px; /* Align with container padding */
         top: 50%;
         transform: translateY(-50%);
@@ -638,13 +519,13 @@ section {
         display: none; /* Hide links by default */
         flex-direction: column;
         position: absolute;
-        top: var(--header-height);
+        top: var(--header-height); /* Position below header */
         left: 0;
         width: 100%;
-        /* Mobile menu background matches header */
-        background-color: #0a0d1a;
+        background-color: #0a0d1a; /* Mobile menu background */
         padding: 20px 0;
         border-bottom: 1px solid var(--accent-neon);
+        box-shadow: 0 5px 10px rgba(0,0,0,0.3); /* Add shadow */
     }
     .main-nav .nav-links.active {
         display: flex; /* Show when active */
@@ -654,36 +535,50 @@ section {
         text-align: center;
         width: 100%;
     }
-     /* Ensure mobile links are readable */
-     .main-nav .nav-links a {
-         font-size: 0.9rem;
-         white-space: normal; /* Allow wrapping on mobile menu if needed */
-     }
-     .main-nav .nav-links .btn {
-         margin: 15px auto 0 auto; /* Center button */
-         display: block;
-         width: fit-content;
-         font-size: 0.9rem; /* Keep mobile button readable */
-         padding: 8px 15px;
-         white-space: normal;
-     }
-
-    .overview-grid, .why-us-grid {
-        grid-template-columns: 1fr; /* Stack items */
+    .main-nav .nav-links a {
+        font-size: 1rem; /* Larger font for mobile menu */
+        padding: 10px 20px; /* Larger tap area */
+        display: block; /* Make full width */
+        white-space: normal;
+    }
+    .main-nav .nav-links .btn {
+        margin: 15px auto 10px auto;
+        display: block;
+        width: fit-content;
+        font-size: 1rem;
+        padding: 10px 20px;
+        white-space: normal;
     }
 
-    .feature-block, .feature-block.reverse {
-        flex-direction: column;
-        text-align: center;
+    /* Remove margin needed for desktop icon spacing */
+     .main-nav {
+        margin-right: 0;
     }
-    .feature-icon { margin-bottom: 15px; }
 
     /* --- **** START: WHATSAPP ICON MOBILE ADJUSTMENT **** --- */
     .whatsapp-header-icon {
-        right: 60px; /* Move it left to avoid overlapping the menu toggle */
-                     /* Adjust this value based on your menu toggle size/position */
-        font-size: 1.8rem; /* Slightly smaller on mobile */
-        /* If header height changes significantly, you might need to adjust top/transform */
+        /* **** ADJUST THIS VALUE - Ensure it doesn't hit toggle **** */
+        right: 65px; /* Move left to avoid menu toggle */
+        font-size: 1.8rem;
     }
     /* --- **** END: WHATSAPP ICON MOBILE ADJUSTMENT **** --- */
+
+
+    .overview-grid {
+        grid-template-columns: 1fr; /* Stack items */
+    }
+    .location-flex {
+         flex-direction: column; /* Stack location items */
+         gap: 30px;
+    }
+    .location-image {
+        margin-top: 0; /* Remove top margin when stacked */
+    }
+
+    /* Stack feature blocks if used */
+     .feature-block-with-image, .feature-block-with-image.reverse {
+         flex-direction: column;
+         text-align: center;
+     }
+
 }
